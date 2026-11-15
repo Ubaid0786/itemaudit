@@ -1,0 +1,98 @@
+# My own reading of a few flagged tasks. For each one I read the problem
+# statement, the reference patch, the test patch and the FAIL_TO_PASS list in
+# the public SWE-bench Verified dataset (princeton-nlp/SWE-bench_Verified on
+# Hugging Face). I did not run any task and I did not read any submission's
+# patch, so every explanation of *why* systems fail is a hypothesis, not an
+# established fact. The statistics quoted next to each note in the results
+# are computed by the audit script, not typed here.
+
+- task: pylint-dev__pylint-7277
+  reading: >-
+    The only FAIL_TO_PASS test is tests/test_self.py::TestRunTC::test_modify_sys_path,
+    which builds expectations from the current working directory and
+    sys.path. The reference patch is three lines. A test like this can pass
+    or fail depending on where and how the test process is started, which
+    would explain why one group of submissions almost never passes it while
+    another usually does. It is on OpenAI's list of 23 tasks that could not
+    run on their infrastructure.
+
+- task: pylint-dev__pylint-6528
+  reading: >-
+    Two of the four FAIL_TO_PASS tests are again in tests/test_self.py::TestRunTC
+    (test_ignore_recursive, test_ignore_pattern_recursive), the same test
+    class as pylint-7277, and the task shows the same split between the two
+    groups of submissions. Also on OpenAI's list of 23. I read this as the
+    same environment sensitivity, not as a difference in what the systems
+    wrote.
+
+- task: matplotlib__matplotlib-20488
+  reading: >-
+    The issue text itself says the test "is failing quite a few of the CI
+    runs" and "I cannot reproduce locally, so I assume there was a numpy
+    change somewhere". The task is to make an image-comparison test pass
+    whose outcome the reporter already found to depend on the installed
+    numpy. Also on OpenAI's list of 23.
+
+- task: psf__requests-2317
+  reading: >-
+    Seven of the eight FAIL_TO_PASS tests are pre-existing tests such as
+    test_HTTP_302_ALLOW_REDIRECT_GET and test_requests_history_is_saved, not
+    tests of the reported bug. At the task's base commit test_requests.py
+    sets HTTPBIN = os.environ.get('HTTPBIN_URL', 'http://httpbin.org/') and
+    one test requests https://httpbin.org/redirect/5 directly, so these tests
+    make live HTTP requests to a public service. Whether a submission passes
+    then depends partly on network access and on that service at evaluation
+    time.
+
+- task: sympy__sympy-18763
+  reading: >-
+    The issue asks for parentheses around the expression in the LaTeX form of
+    3*Subs(-x+y, (x,), (1,)). The reference patch adds parentheses
+    unconditionally, and the test patch changes an existing assertion so that
+    Subs(x*y, ...) must now print as \left(x y\right). A fix that adds
+    parentheses only where precedence requires them answers the issue and
+    fails that assertion. That would fit the pattern in the data, where the
+    solve rate falls as overall accuracy rises.
+
+- task: pytest-dev__pytest-7205
+  reading: >-
+    The issue is a BytesWarning when a parametrized value is bytes. The
+    reference patch routes every parameter through saferepr, and the test
+    patch rewrites existing expectations so that string parameters must now
+    appear quoted (arg_same?'foo'? instead of arg_same?foo?). The suggestion
+    to use saferepr is in the maintainers' hints, which are not part of the
+    problem statement. Nine of the ten FAIL_TO_PASS tests are these
+    rewritten string expectations and only one covers the bytes case, so a
+    fix that handles only bytes resolves the reported warning and still
+    fails.
+
+- task: django__django-10999
+  reading: >-
+    Labelled "<15 min fix" by the human annotators and solved by no
+    submission. The issue proposes a specific one-line change to a lookahead
+    in a regular expression. The reference patch does something else: it
+    introduces a separate sign group, and the test patch changes existing
+    expectations (for example '-15:30' must now mean minus 15 minutes and
+    minus 30 seconds, where the old test expected plus 30 seconds) and
+    requires '-01:-01' to be rejected. I ran the regular expression proposed
+    in the issue: it still reads '-15:30' as minus 15 minutes plus 30
+    seconds and it accepts '-01:-01'. Following the issue text cannot pass
+    these tests.
+
+- task: matplotlib__matplotlib-25479
+  reading: >-
+    Labelled "<15 min fix" and solved by no submission. The issue is about a
+    colormap registered under one name and created under another. One of the
+    two FAIL_TO_PASS tests, test_colormap_equals, has an existing assertion
+    inverted so that two colormaps with different names must now compare
+    equal, a change to Colormap.__eq__ that the issue does not ask for. Also
+    on OpenAI's list of 23.
+
+- task: pylint-dev__pylint-4551
+  reading: >-
+    Solved by no submission. This is the example OpenAI gives of a test that
+    is too narrow: the test module imports a helper named get_annotation
+    that the reference patch introduces and the issue never mentions, so
+    other correct fixes fail at import. I checked the test patch and the
+    import is there. This one is OpenAI's finding, not mine; the data here
+    agree with it.

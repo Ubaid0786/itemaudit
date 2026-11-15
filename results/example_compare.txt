@@ -1,0 +1,5 @@
+20251205_sonar-foundation-agent_claude-opus-4-5: 79.20%  20251015_Prometheus_v1.2.1_gpt5: 74.40%  on 500 shared tasks
+difference (a - b): +4.80 points, paired SE 1.61 (unpaired SE would be 2.67)
+95% CI analytic [+1.64, +7.96], bootstrap [+1.60, +8.00]
+solved by a only: 45, by b only: 21, both: 351, neither: 83
+McNemar exact p = 0.004272

@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+.coverage
+htmlcov/
+
+# Source data is fetched, not redistributed: neither the swe-bench/experiments
+# repository nor the SWE-bench Verified dataset card carries a licence.
+# Rebuild these with experiments/build_swebench_matrix.py.
+data/raw/
+data/swebench_verified_matrix.csv
+data/swebench_verified_submissions.csv

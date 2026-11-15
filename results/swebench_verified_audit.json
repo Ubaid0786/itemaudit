@@ -1,0 +1,2716 @@
+{
+  "environment": {
+    "python": "3.14.8",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pandas": "3.1.0"
+  },
+  "settings": {
+    "top": 20,
+    "alpha": 0.05,
+    "capable_min_resolved_rate": 0.5,
+    "near_zero_discrimination_below": 0.1,
+    "seed": 0
+  },
+  "data": {
+    "source_repository": "https://github.com/swe-bench/experiments",
+    "source_path": "evaluation/verified",
+    "source_commit_sha": "40f164d5b8f1d249bf95a6df8b74b577fd8e519d",
+    "source_commit_date": "2026-09-03T01:24:30Z",
+    "task_list_dataset": "princeton-nlp/SWE-bench_Verified",
+    "task_list_revision": "c104f840cc67f8b6eec6f759ebc8b2693d585d4a",
+    "n_submission_directories": 182,
+    "n_source_files": 358,
+    "n_included": 173,
+    "n_excluded": 9,
+    "n_excluded_no_per_task_results": 7,
+    "n_excluded_inconsistent_with_reported_score": 2,
+    "excluded": {
+      "20250720_mini-v0.0.0-Llama-4-Scout-17B-Instruct": "no per-task results file",
+      "20250720_mini-v0.0.0-claude-3-7-sonnet-20250219": "per-task file gives 10.2% resolved but metadata reports 52.8%",
+      "20250720_mini-v0.0.0-gpt-4o-2024-11-20": "no per-task results file",
+      "20250720_mini-v0.0.0_gpt-4.1-mini-2025-04-14": "no per-task results file",
+      "20250726_mini-v1.0.0_gemini-2.0-flash": "no per-task results file",
+      "20250726_mini-v1.0.0_gemini-2.5-flash": "no per-task results file",
+      "20250726_mini-v1.0.0_gpt-4.1-2025-04-14": "no per-task results file",
+      "20260219_mini-v2.0.0_gpt-5-2-codex": "no per-task results file",
+      "20260226_mini-v2.0.0_gemini-3-pro-high": "per-task file gives 0.0% resolved but metadata reports 69.6%"
+    },
+    "n_from_results_json": 135,
+    "n_from_per_instance_details": 38,
+    "n_with_unknown_ids": 0,
+    "n_with_parse_notes": 0,
+    "n_reporting_no_generation_count": 135,
+    "n_with_no_generation_on_10_or_more_tasks": 32,
+    "max_no_generation": 121,
+    "n_with_reported_score": 39,
+    "n_included_reported_score_differs_over_0.1pt": 1,
+    "max_score_gap_pct_allowed": 1.0,
+    "n_tasks": 500,
+    "n_metadata_problems": 0
+  },
+  "tasks_all_submissions": {
+    "n_submissions": 173,
+    "n_tasks": 500,
+    "kr20": 0.9938059685106335,
+    "resolved_rate_min": 0.004,
+    "resolved_rate_median": 0.566,
+    "resolved_rate_max": 0.792,
+    "flags": {
+      "negative": 7,
+      "near_zero": 25,
+      "solved_by_all": 0,
+      "solved_by_none": 26,
+      "negative_ci_excludes_zero": 2,
+      "unflagged": 442
+    },
+    "solve_rate_histogram": [
+      {
+        "band": "exactly 0",
+        "n_tasks": 26
+      },
+      {
+        "band": "0.0 to 0.1",
+        "n_tasks": 59
+      },
+      {
+        "band": "0.1 to 0.2",
+        "n_tasks": 27
+      },
+      {
+        "band": "0.2 to 0.3",
+        "n_tasks": 24
+      },
+      {
+        "band": "0.3 to 0.4",
+        "n_tasks": 21
+      },
+      {
+        "band": "0.4 to 0.5",
+        "n_tasks": 46
+      },
+      {
+        "band": "0.5 to 0.6",
+        "n_tasks": 47
+      },
+      {
+        "band": "0.6 to 0.7",
+        "n_tasks": 48
+      },
+      {
+        "band": "0.7 to 0.8",
+        "n_tasks": 65
+      },
+      {
+        "band": "0.8 to 0.9",
+        "n_tasks": 76
+      },
+      {
+        "band": "0.9 to 1.0 (below 1)",
+        "n_tasks": 61
+      },
+      {
+        "band": "exactly 1",
+        "n_tasks": 0
+      }
+    ],
+    "solve_rate_quartiles": [
+      0.2658959537572254,
+      0.5982658959537572,
+      0.8092485549132948
+    ],
+    "n_tasks_solved_by_at_most_5pct": 67,
+    "n_tasks_solved_by_at_least_95pct": 10
+  },
+  "annotated_difficulty": [
+    {
+      "label": "<15 min fix",
+      "n_tasks": 194,
+      "mean_solve_rate": 0.683779274179131,
+      "n_solved_by_none": 2
+    },
+    {
+      "label": "15 min - 1 hour",
+      "n_tasks": 261,
+      "mean_solve_rate": 0.48331229375678253,
+      "n_solved_by_none": 14
+    },
+    {
+      "label": "1-4 hours",
+      "n_tasks": 42,
+      "mean_solve_rate": 0.19460500963391136,
+      "n_solved_by_none": 9
+    },
+    {
+      "label": ">4 hours",
+      "n_tasks": 3,
+      "mean_solve_rate": 0.15992292870905586,
+      "n_solved_by_none": 1
+    }
+  ],
+  "top": {
+    "leaderboard": {
+      "alpha": 0.05,
+      "n_systems": 20,
+      "n_adjacent_pairs": 19,
+      "n_adjacent_indistinguishable": 19,
+      "n_pairs": 190,
+      "n_pairs_indistinguishable": 190,
+      "n_tiers": 1,
+      "rows": [
+        {
+          "rank": 1,
+          "system": "20251205_sonar-foundation-agent_claude-opus-4-5",
+          "n_tasks": 500,
+          "n_solved": 396,
+          "accuracy": 0.792,
+          "ci_low": 0.7542636968800828,
+          "ci_high": 0.8252836882903708,
+          "rank_low": 1,
+          "rank_high": 20,
+          "boot_rank_low": 1,
+          "boot_rank_high": 6,
+          "tier": 1
+        },
+        {
+          "rank": 2,
+          "system": "20251215_livesweagent_claude-opus-4-5",
+          "n_tasks": 500,
+          "n_solved": 396,
+          "accuracy": 0.792,
+          "ci_low": 0.7542636968800828,
+          "ci_high": 0.8252836882903708,
+          "rank_low": 1,
+          "rank_high": 20,
+          "boot_rank_low": 1,
+          "boot_rank_high": 7,
+          "tier": 1
+        },
+        {
+          "rank": 3,
+          "system": "20250928_trae_doubao_seed_code",
+          "n_tasks": 500,
+          "n_solved": 394,
+          "accuracy": 0.788,
+          "ci_low": 0.7500478841824445,
+          "ci_high": 0.8215604957117015,
+          "rank_low": 1,
+          "rank_high": 20,
+          "boot_rank_low": 1,
+          "boot_rank_high": 9,
+          "tier": 1
+        },
+        {
+          "rank": 4,
+          "system": "20251127_openhands_claude-opus-4-5",
+          "n_tasks": 500,
+          "n_solved": 388,
+          "accuracy": 0.776,
+          "ci_low": 0.7374303353251315,
+          "ci_high": 0.8103610287400917,
+          "rank_low": 1,
+          "rank_high": 20,
+          "boot_rank_low": 2,
+          "boot_rank_high": 14,
+          "tier": 1
+        },
+        {
+          "rank": 5,
+          "system": "20251120_livesweagent_gemini-3-pro-preview",
+          "n_tasks": 500,
+          "n_solved": 387,
+          "accuracy": 0.774,
+          "ci_low": 0.7353316422926235,
+          "ci_high": 0.8084902191344461,
+          "rank_low": 1,
+          "rank_high": 20,
+          "boot_rank_low": 2,
+          "boot_rank_high": 15,
+          "tier": 1
+        },
+        {
+          "rank": 6,
+          "system": "20250804_epam-ai-run-claude-4-sonnet",
+          "n_tasks": 500,
+          "n_solved": 384,
+          "accuracy": 0.768,
+          "ci_low": 0.7290425919653227,
+          "ci_high": 0.8028707615472854,
+          "rank_low": 1,
+          "rank_high": 20,
+          "boot_rank_low": 2,
+          "boot_rank_high": 17,
+          "tier": 1
+        },
+        {
+          "rank": 7,
+          "system": "20250902_atlassian-rovo-dev",
+          "n_tasks": 500,
+          "n_solved": 384,
+          "accuracy": 0.768,
+          "ci_low": 0.7290425919653227,
+          "ci_high": 0.8028707615472854,
+          "rank_low": 1,
+          "rank_high": 20,
+          "boot_rank_low": 2,
+          "boot_rank_high": 16,
+          "tier": 1
+        },
+        {
+          "rank": 8,
+          "system": "20260217_mini-v2.0.0_claude-4-5-opus-high",
+          "n_tasks": 500,
+          "n_solved": 384,
+          "accuracy": 0.768,
+          "ci_low": 0.7290425919653227,
+          "ci_high": 0.8028707615472854,
+          "rank_low": 1,
+          "rank_high": 20,
+          "boot_rank_low": 3,
+          "boot_rank_high": 17,
+          "tier": 1
+        },
+        {
+          "rank": 9,
+          "system": "20250819_ACoder",
+          "n_tasks": 500,
+          "n_solved": 382,
+          "accuracy": 0.764,
+          "ci_low": 0.7248556437078593,
+          "ci_high": 0.7991187045284411,
+          "rank_low": 1,
+          "rank_high": 20,
+          "boot_rank_low": 3,
+          "boot_rank_high": 18,
+          "tier": 1
+        },
+        {
+          "rank": 10,
+          "system": "20260217_mini-v2.0.0_gemini-3-flash-high",
+          "n_tasks": 500,
+          "n_solved": 379,
+          "accuracy": 0.758,
+          "ci_low": 0.7185836488729677,
+          "ci_high": 0.7934821914488713,
+          "rank_low": 1,
+          "rank_high": 20,
+          "boot_rank_low": 4,
+          "boot_rank_high": 20,
+          "tier": 1
+        },
+        {
+          "rank": 11,
+          "system": "20260217_mini-v2.0.0_minimax-2-5-high",
+          "n_tasks": 500,
+          "n_solved": 379,
+          "accuracy": 0.758,
+          "ci_low": 0.7185836488729677,
+          "ci_high": 0.7934821914488713,
+          "rank_low": 1,
+          "rank_high": 20,
+          "boot_rank_low": 4,
+          "boot_rank_high": 20,
+          "tier": 1
+        },
+        {
+          "rank": 12,
+          "system": "20250901_warp",
+          "n_tasks": 500,
+          "n_solved": 378,
+          "accuracy": 0.756,
+          "ci_low": 0.7164951931439073,
+          "ci_high": 0.791601144539778,
+          "rank_low": 1,
+          "rank_high": 20,
+          "boot_rank_low": 4,
+          "boot_rank_high": 20,
+          "tier": 1
+        },
+        {
+          "rank": 13,
+          "system": "20260217_mini-v2.0.0_claude-4-6-opus",
+          "n_tasks": 500,
+          "n_solved": 378,
+          "accuracy": 0.756,
+          "ci_low": 0.7164951931439073,
+          "ci_high": 0.791601144539778,
+          "rank_low": 1,
+          "rank_high": 20,
+          "boot_rank_low": 5,
+          "boot_rank_high": 20,
+          "tier": 1
+        },
+        {
+          "rank": 14,
+          "system": "20250612_trae",
+          "n_tasks": 500,
+          "n_solved": 376,
+          "accuracy": 0.752,
+          "ci_low": 0.7123215407533253,
+          "ci_high": 0.7878357916540525,
+          "rank_low": 1,
+          "rank_high": 20,
+          "boot_rank_low": 6,
+          "boot_rank_high": 20,
+          "tier": 1
+        },
+        {
+          "rank": 15,
+          "system": "20250731_harness_ai",
+          "n_tasks": 500,
+          "n_solved": 374,
+          "accuracy": 0.748,
+          "ci_low": 0.7081521755124419,
+          "ci_high": 0.7840661516186281,
+          "rank_low": 1,
+          "rank_high": 20,
+          "boot_rank_low": 8,
+          "boot_rank_high": 20,
+          "tier": 1
+        },
+        {
+          "rank": 16,
+          "system": "20251103_sonar-foundation-agent_claude-sonnet-4-5",
+          "n_tasks": 500,
+          "n_solved": 374,
+          "accuracy": 0.748,
+          "ci_low": 0.7081521755124419,
+          "ci_high": 0.7840661516186281,
+          "rank_low": 1,
+          "rank_high": 20,
+          "boot_rank_low": 7,
+          "boot_rank_high": 20,
+          "tier": 1
+        },
+        {
+          "rank": 17,
+          "system": "20250720_Lingxi-v1.5_claude-4-sonnet-20250514",
+          "n_tasks": 500,
+          "n_solved": 373,
+          "accuracy": 0.746,
+          "ci_low": 0.7060690794081029,
+          "ci_high": 0.7821797450848135,
+          "rank_low": 1,
+          "rank_high": 20,
+          "boot_rank_low": 8,
+          "boot_rank_high": 20,
+          "tier": 1
+        },
+        {
+          "rank": 18,
+          "system": "20250915_JoyCode",
+          "n_tasks": 500,
+          "n_solved": 373,
+          "accuracy": 0.746,
+          "ci_low": 0.7060690794081029,
+          "ci_high": 0.7821797450848135,
+          "rank_low": 1,
+          "rank_high": 20,
+          "boot_rank_low": 6,
+          "boot_rank_high": 20,
+          "tier": 1
+        },
+        {
+          "rank": 19,
+          "system": "20250603_Refact_Agent_claude-4-sonnet",
+          "n_tasks": 500,
+          "n_solved": 372,
+          "accuracy": 0.744,
+          "ci_low": 0.7039870300464813,
+          "ci_high": 0.7802922918082812,
+          "rank_low": 1,
+          "rank_high": 20,
+          "boot_rank_low": 8,
+          "boot_rank_high": 20,
+          "tier": 1
+        },
+        {
+          "rank": 20,
+          "system": "20251015_Prometheus_v1.2.1_gpt5",
+          "n_tasks": 500,
+          "n_solved": 372,
+          "accuracy": 0.744,
+          "ci_low": 0.7039870300464813,
+          "ci_high": 0.7802922918082812,
+          "rank_low": 1,
+          "rank_high": 20,
+          "boot_rank_low": 7,
+          "boot_rank_high": 20,
+          "tier": 1
+        }
+      ],
+      "adjacent": [
+        {
+          "rank": 1,
+          "system_upper": "20251205_sonar-foundation-agent_claude-opus-4-5",
+          "system_lower": "20251215_livesweagent_claude-opus-4-5",
+          "diff": 0.0,
+          "ci_low": -0.023543122720548856,
+          "ci_high": 0.023543122720548856,
+          "boot_ci_low": -0.024,
+          "boot_ci_high": 0.024,
+          "n_only_upper": 18,
+          "n_only_lower": 18,
+          "discordance": 0.072,
+          "p_value": 1.0,
+          "p_holm": 1.0,
+          "distinguishable": false
+        },
+        {
+          "rank": 2,
+          "system_upper": "20251215_livesweagent_claude-opus-4-5",
+          "system_lower": "20250928_trae_doubao_seed_code",
+          "diff": 0.004,
+          "ci_low": -0.027875606827199254,
+          "ci_high": 0.03587560682719926,
+          "boot_ci_low": -0.028,
+          "boot_ci_high": 0.036,
+          "n_only_upper": 34,
+          "n_only_lower": 32,
+          "discordance": 0.132,
+          "p_value": 0.9021585000966994,
+          "p_holm": 1.0,
+          "distinguishable": false
+        },
+        {
+          "rank": 3,
+          "system_upper": "20250928_trae_doubao_seed_code",
+          "system_lower": "20251127_openhands_claude-opus-4-5",
+          "diff": 0.012,
+          "ci_low": -0.020339792569763846,
+          "ci_high": 0.04433979256976385,
+          "boot_ci_low": -0.02,
+          "boot_ci_high": 0.044,
+          "n_only_upper": 37,
+          "n_only_lower": 31,
+          "discordance": 0.136,
+          "p_value": 0.5446122234192592,
+          "p_holm": 1.0,
+          "distinguishable": false
+        },
+        {
+          "rank": 4,
+          "system_upper": "20251127_openhands_claude-opus-4-5",
+          "system_lower": "20251120_livesweagent_gemini-3-pro-preview",
+          "diff": 0.002,
+          "ci_low": -0.026021371527382223,
+          "ci_high": 0.03002137152738222,
+          "boot_ci_low": -0.026,
+          "boot_ci_high": 0.03,
+          "n_only_upper": 26,
+          "n_only_lower": 25,
+          "discordance": 0.102,
+          "p_value": 1.0,
+          "p_holm": 1.0,
+          "distinguishable": false
+        },
+        {
+          "rank": 5,
+          "system_upper": "20251120_livesweagent_gemini-3-pro-preview",
+          "system_lower": "20250804_epam-ai-run-claude-4-sonnet",
+          "diff": 0.006,
+          "ci_low": -0.024135094898436925,
+          "ci_high": 0.03613509489843693,
+          "boot_ci_low": -0.024,
+          "boot_ci_high": 0.036,
+          "n_only_upper": 31,
+          "n_only_lower": 28,
+          "discordance": 0.118,
+          "p_value": 0.794843653982861,
+          "p_holm": 1.0,
+          "distinguishable": false
+        },
+        {
+          "rank": 6,
+          "system_upper": "20250804_epam-ai-run-claude-4-sonnet",
+          "system_lower": "20250902_atlassian-rovo-dev",
+          "diff": 0.0,
+          "ci_low": -0.029363433011689012,
+          "ci_high": 0.029363433011689012,
+          "boot_ci_low": -0.03,
+          "boot_ci_high": 0.03,
+          "n_only_upper": 28,
+          "n_only_lower": 28,
+          "discordance": 0.112,
+          "p_value": 1.0,
+          "p_holm": 1.0,
+          "distinguishable": false
+        },
+        {
+          "rank": 7,
+          "system_upper": "20250902_atlassian-rovo-dev",
+          "system_lower": "20260217_mini-v2.0.0_claude-4-5-opus-high",
+          "diff": 0.0,
+          "ci_low": -0.030896455613404674,
+          "ci_high": 0.030896455613404674,
+          "boot_ci_low": -0.03,
+          "boot_ci_high": 0.032,
+          "n_only_upper": 31,
+          "n_only_lower": 31,
+          "discordance": 0.124,
+          "p_value": 1.0,
+          "p_holm": 1.0,
+          "distinguishable": false
+        },
+        {
+          "rank": 8,
+          "system_upper": "20260217_mini-v2.0.0_claude-4-5-opus-high",
+          "system_lower": "20250819_ACoder",
+          "diff": 0.004,
+          "ci_low": -0.027388868305857707,
+          "ci_high": 0.035388868305857704,
+          "boot_ci_low": -0.026,
+          "boot_ci_high": 0.036,
+          "n_only_upper": 33,
+          "n_only_lower": 31,
+          "discordance": 0.128,
+          "p_value": 0.9006532462520334,
+          "p_holm": 1.0,
+          "distinguishable": false
+        },
+        {
+          "rank": 9,
+          "system_upper": "20250819_ACoder",
+          "system_lower": "20260217_mini-v2.0.0_gemini-3-flash-high",
+          "diff": 0.006,
+          "ci_low": -0.02514017435238962,
+          "ci_high": 0.037140174352389616,
+          "boot_ci_low": -0.026,
+          "boot_ci_high": 0.036,
+          "n_only_upper": 33,
+          "n_only_lower": 30,
+          "discordance": 0.126,
+          "p_value": 0.8013064925040663,
+          "p_holm": 1.0,
+          "distinguishable": false
+        },
+        {
+          "rank": 10,
+          "system_upper": "20260217_mini-v2.0.0_gemini-3-flash-high",
+          "system_lower": "20260217_mini-v2.0.0_minimax-2-5-high",
+          "diff": 0.0,
+          "ci_low": -0.029363433011689012,
+          "ci_high": 0.029363433011689012,
+          "boot_ci_low": -0.03,
+          "boot_ci_high": 0.03,
+          "n_only_upper": 28,
+          "n_only_lower": 28,
+          "discordance": 0.112,
+          "p_value": 1.0,
+          "p_holm": 1.0,
+          "distinguishable": false
+        },
+        {
+          "rank": 11,
+          "system_upper": "20260217_mini-v2.0.0_minimax-2-5-high",
+          "system_lower": "20250901_warp",
+          "diff": 0.002,
+          "ci_low": -0.03198111751005456,
+          "ci_high": 0.03598111751005456,
+          "boot_ci_low": -0.032,
+          "boot_ci_high": 0.036,
+          "n_only_upper": 38,
+          "n_only_lower": 37,
+          "discordance": 0.15,
+          "p_value": 1.0,
+          "p_holm": 1.0,
+          "distinguishable": false
+        },
+        {
+          "rank": 12,
+          "system_upper": "20250901_warp",
+          "system_lower": "20260217_mini-v2.0.0_claude-4-6-opus",
+          "diff": 0.0,
+          "ci_low": -0.03187753885779939,
+          "ci_high": 0.03187753885779939,
+          "boot_ci_low": -0.032,
+          "boot_ci_high": 0.032,
+          "n_only_upper": 33,
+          "n_only_lower": 33,
+          "discordance": 0.132,
+          "p_value": 1.0,
+          "p_holm": 1.0,
+          "distinguishable": false
+        },
+        {
+          "rank": 13,
+          "system_upper": "20260217_mini-v2.0.0_claude-4-6-opus",
+          "system_lower": "20250612_trae",
+          "diff": 0.004,
+          "ci_low": -0.028355023839921733,
+          "ci_high": 0.03635502383992173,
+          "boot_ci_low": -0.028049999999999912,
+          "boot_ci_high": 0.036,
+          "n_only_upper": 35,
+          "n_only_lower": 33,
+          "discordance": 0.136,
+          "p_value": 0.9035973456835127,
+          "p_holm": 1.0,
+          "distinguishable": false
+        },
+        {
+          "rank": 14,
+          "system_upper": "20250612_trae",
+          "system_lower": "20250731_harness_ai",
+          "diff": 0.004,
+          "ci_low": -0.01954050667268028,
+          "ci_high": 0.02754050667268028,
+          "boot_ci_low": -0.02,
+          "boot_ci_high": 0.028,
+          "n_only_upper": 19,
+          "n_only_lower": 17,
+          "discordance": 0.072,
+          "p_value": 0.8679394004284404,
+          "p_holm": 1.0,
+          "distinguishable": false
+        },
+        {
+          "rank": 15,
+          "system_upper": "20250731_harness_ai",
+          "system_lower": "20251103_sonar-foundation-agent_claude-sonnet-4-5",
+          "diff": 0.0,
+          "ci_low": -0.028295312051160048,
+          "ci_high": 0.028295312051160048,
+          "boot_ci_low": -0.03,
+          "boot_ci_high": 0.028,
+          "n_only_upper": 26,
+          "n_only_lower": 26,
+          "discordance": 0.104,
+          "p_value": 1.0,
+          "p_holm": 1.0,
+          "distinguishable": false
+        },
+        {
+          "rank": 16,
+          "system_upper": "20251103_sonar-foundation-agent_claude-sonnet-4-5",
+          "system_lower": "20250720_Lingxi-v1.5_claude-4-sonnet-20250514",
+          "diff": 0.002,
+          "ci_low": -0.027623926706544566,
+          "ci_high": 0.03162392670654457,
+          "boot_ci_low": -0.028,
+          "boot_ci_high": 0.032,
+          "n_only_upper": 29,
+          "n_only_lower": 28,
+          "discordance": 0.114,
+          "p_value": 1.0,
+          "p_holm": 1.0,
+          "distinguishable": false
+        },
+        {
+          "rank": 17,
+          "system_upper": "20250720_Lingxi-v1.5_claude-4-sonnet-20250514",
+          "system_lower": "20250915_JoyCode",
+          "diff": 0.0,
+          "ci_low": -0.029363433011689012,
+          "ci_high": 0.029363433011689012,
+          "boot_ci_low": -0.03,
+          "boot_ci_high": 0.03,
+          "n_only_upper": 28,
+          "n_only_lower": 28,
+          "discordance": 0.112,
+          "p_value": 1.0,
+          "p_holm": 1.0,
+          "distinguishable": false
+        },
+        {
+          "rank": 18,
+          "system_upper": "20250915_JoyCode",
+          "system_lower": "20250603_Refact_Agent_claude-4-sonnet",
+          "diff": 0.002,
+          "ci_low": -0.028139181982834847,
+          "ci_high": 0.03213918198283485,
+          "boot_ci_low": -0.03,
+          "boot_ci_high": 0.032,
+          "n_only_upper": 30,
+          "n_only_lower": 29,
+          "discordance": 0.118,
+          "p_value": 1.0,
+          "p_holm": 1.0,
+          "distinguishable": false
+        },
+        {
+          "rank": 19,
+          "system_upper": "20250603_Refact_Agent_claude-4-sonnet",
+          "system_lower": "20251015_Prometheus_v1.2.1_gpt5",
+          "diff": 0.0,
+          "ci_low": -0.033754266574010455,
+          "ci_high": 0.033754266574010455,
+          "boot_ci_low": -0.034,
+          "boot_ci_high": 0.034,
+          "n_only_upper": 37,
+          "n_only_lower": 37,
+          "discordance": 0.148,
+          "p_value": 1.0,
+          "p_holm": 1.0,
+          "distinguishable": false
+        }
+      ]
+    },
+    "n_pairs_raw_p_below_alpha": 29,
+    "smallest_raw_p": 0.0016414913408482334,
+    "largest_adjacent_gap": 0.012,
+    "smallest_holm_p": 0.31188335476116436,
+    "first_vs_last": {
+      "system_a": "20251205_sonar-foundation-agent_claude-opus-4-5",
+      "system_b": "20251015_Prometheus_v1.2.1_gpt5",
+      "n_tasks": 500,
+      "accuracy_a": 0.792,
+      "accuracy_b": 0.744,
+      "diff": 0.048,
+      "n_both": 351,
+      "n_only_a": 45,
+      "n_only_b": 21,
+      "n_neither": 83,
+      "discordance": 0.132,
+      "se_paired": 0.01612178103210978,
+      "se_unpaired": 0.02665332999833229,
+      "confidence": 0.95,
+      "ci_low": 0.016401889810423856,
+      "ci_high": 0.07959811018957615,
+      "boot_ci_low": 0.016,
+      "boot_ci_high": 0.08,
+      "p_value": 0.004272405031651674
+    },
+    "n_tasks_solved_by_all_top": 254,
+    "n_tasks_solved_by_none_of_top": 36,
+    "n_tasks_where_top_systems_disagree": 210,
+    "n_outside_top_tied_with_last": 1,
+    "n_top_from_mini_swe_agent": 4,
+    "n_top_naming_a_claude_model": 15,
+    "n_top_checked_by_maintainers": 0
+  },
+  "full_leaderboard": {
+    "n_systems": 173,
+    "n_adjacent_pairs": 172,
+    "n_adjacent_indistinguishable": 172,
+    "n_tiers": 10,
+    "first_rank_with_raw_p_below_alpha_vs_rank_1": 10,
+    "first_rank_with_holm_p_below_alpha_vs_rank_1": 16
+  },
+  "detectable_difference": {
+    "n_tasks": 500,
+    "levels": {
+      "top20_pairs_min": {
+        "discordance": 0.056,
+        "min_significant_difference": 0.020742309126944906,
+        "min_detectable_difference_power_0.8": 0.029579337114418264
+      },
+      "top20_pairs_p25": {
+        "discordance": 0.112,
+        "min_significant_difference": 0.02933405488226072,
+        "min_detectable_difference_power_0.8": 0.041831499713226514
+      },
+      "top20_pairs_median": {
+        "discordance": 0.124,
+        "min_significant_difference": 0.030865543694095898,
+        "min_detectable_difference_power_0.8": 0.04401546214358888
+      },
+      "top20_pairs_p75": {
+        "discordance": 0.1355,
+        "min_significant_difference": 0.03226507927168486,
+        "min_detectable_difference_power_0.8": 0.0460112541453248
+      },
+      "top20_pairs_max": {
+        "discordance": 0.178,
+        "min_significant_difference": 0.0369805264993227,
+        "min_detectable_difference_power_0.8": 0.05273566473710687
+      }
+    },
+    "unpaired_at_median_top20_accuracy": {
+      "accuracy": 0.758,
+      "min_significant_difference": 0.05309093482819256,
+      "min_detectable_difference_power_0.8": 0.07588852621971412
+    },
+    "top20_spread_first_minus_last": 0.04800000000000004
+  },
+  "capable": {
+    "threshold": 0.5,
+    "n_systems": 109,
+    "n_per_year": {
+      "2024": 13,
+      "2025": 84,
+      "2026": 12
+    },
+    "kr20": 0.9731462894458172,
+    "flags": {
+      "negative": 30,
+      "near_zero": 60,
+      "solved_by_all": 27,
+      "solved_by_none": 26,
+      "negative_ci_excludes_zero": 5,
+      "unflagged": 357
+    },
+    "sensitivity_to_threshold": {
+      "0.4": {
+        "n_systems": 137,
+        "negative": 19,
+        "near_zero": 41,
+        "solved_by_all": 7,
+        "solved_by_none": 26,
+        "negative_ci_excludes_zero": 4,
+        "unflagged": 407
+      },
+      "0.5": {
+        "n_systems": 109,
+        "negative": 30,
+        "near_zero": 60,
+        "solved_by_all": 27,
+        "solved_by_none": 26,
+        "negative_ci_excludes_zero": 5,
+        "unflagged": 357
+      },
+      "0.6": {
+        "n_systems": 78,
+        "negative": 57,
+        "near_zero": 65,
+        "solved_by_all": 71,
+        "solved_by_none": 27,
+        "negative_ci_excludes_zero": 5,
+        "unflagged": 280
+      }
+    },
+    "negative_tasks": [
+      {
+        "task": "sympy__sympy-23950",
+        "n_solved_capable": 65,
+        "n_capable": 109,
+        "solve_rate_capable": 0.5963302752293578,
+        "discrimination_capable": -0.3071658395084312,
+        "disc_ci_low": -0.4682148458675472,
+        "disc_ci_high": -0.12636530570226207,
+        "solve_rate_all": 0.5722543352601156,
+        "discrimination_all": 0.12950552717326816,
+        "irt_discrimination": 0.13298353217703232,
+        "annotated_difficulty": "15 min - 1 hour",
+        "solve_rate_capable_2024": 0.8461538461538461,
+        "solve_rate_capable_2025": 0.6071428571428571,
+        "solve_rate_capable_2026": 0.25
+      },
+      {
+        "task": "sympy__sympy-18763",
+        "n_solved_capable": 22,
+        "n_capable": 109,
+        "solve_rate_capable": 0.2018348623853211,
+        "discrimination_capable": -0.2592184909900472,
+        "disc_ci_low": -0.42652317961384284,
+        "disc_ci_high": -0.07476212893408217,
+        "solve_rate_all": 0.3236994219653179,
+        "discrimination_all": -0.24500735082226888,
+        "irt_discrimination": -0.2918117791693137,
+        "annotated_difficulty": "<15 min fix",
+        "solve_rate_capable_2024": 0.46153846153846156,
+        "solve_rate_capable_2025": 0.19047619047619047,
+        "solve_rate_capable_2026": 0.0
+      },
+      {
+        "task": "sphinx-doc__sphinx-9711",
+        "n_solved_capable": 97,
+        "n_capable": 109,
+        "solve_rate_capable": 0.8899082568807339,
+        "discrimination_capable": -0.2586348669523186,
+        "disc_ci_low": -0.42601128317330833,
+        "disc_ci_high": -0.0741400326851398,
+        "solve_rate_all": 0.7976878612716763,
+        "discrimination_all": 0.3655409425060077,
+        "irt_discrimination": 0.5122631454249653,
+        "annotated_difficulty": "<15 min fix",
+        "solve_rate_capable_2024": 0.9230769230769231,
+        "solve_rate_capable_2025": 0.8809523809523809,
+        "solve_rate_capable_2026": 0.9166666666666666
+      },
+      {
+        "task": "sphinx-doc__sphinx-8595",
+        "n_solved_capable": 88,
+        "n_capable": 109,
+        "solve_rate_capable": 0.8073394495412844,
+        "discrimination_capable": -0.24811727726110092,
+        "disc_ci_low": -0.41676790466419905,
+        "disc_ci_high": -0.06295368482591075,
+        "solve_rate_all": 0.7572254335260116,
+        "discrimination_all": 0.22786398585118967,
+        "irt_discrimination": 0.2944766453217342,
+        "annotated_difficulty": "<15 min fix",
+        "solve_rate_capable_2024": 0.9230769230769231,
+        "solve_rate_capable_2025": 0.7738095238095238,
+        "solve_rate_capable_2026": 0.9166666666666666
+      },
+      {
+        "task": "pytest-dev__pytest-7205",
+        "n_solved_capable": 69,
+        "n_capable": 109,
+        "solve_rate_capable": 0.6330275229357798,
+        "discrimination_capable": -0.19254587793013808,
+        "disc_ci_low": -0.3673430902419708,
+        "disc_ci_high": -0.004611164112454338,
+        "solve_rate_all": 0.6242774566473989,
+        "discrimination_all": 0.11720480947288822,
+        "irt_discrimination": 0.148820076568966,
+        "annotated_difficulty": "<15 min fix",
+        "solve_rate_capable_2024": 0.8461538461538461,
+        "solve_rate_capable_2025": 0.5952380952380952,
+        "solve_rate_capable_2026": 0.6666666666666666
+      },
+      {
+        "task": "matplotlib__matplotlib-23476",
+        "n_solved_capable": 1,
+        "n_capable": 109,
+        "solve_rate_capable": 0.009174311926605505,
+        "discrimination_capable": -0.18363764943852137,
+        "disc_ci_low": -0.3593272876709294,
+        "disc_ci_high": 0.004623790030454085,
+        "solve_rate_all": 0.011560693641618497,
+        "discrimination_all": -0.043645112946301794,
+        "irt_discrimination": -0.03136409787537692,
+        "annotated_difficulty": "<15 min fix",
+        "solve_rate_capable_2024": 0.07692307692307693,
+        "solve_rate_capable_2025": 0.0,
+        "solve_rate_capable_2026": 0.0
+      },
+      {
+        "task": "django__django-11477",
+        "n_solved_capable": 4,
+        "n_capable": 109,
+        "solve_rate_capable": 0.03669724770642202,
+        "discrimination_capable": -0.17350043837676202,
+        "disc_ci_low": -0.3501739765335157,
+        "disc_ci_high": 0.015093883480846877,
+        "solve_rate_all": 0.028901734104046242,
+        "discrimination_all": 0.01263973445008911,
+        "irt_discrimination": 0.07765306785158596,
+        "annotated_difficulty": "15 min - 1 hour",
+        "solve_rate_capable_2024": 0.0,
+        "solve_rate_capable_2025": 0.047619047619047616,
+        "solve_rate_capable_2026": 0.0
+      },
+      {
+        "task": "psf__requests-2317",
+        "n_solved_capable": 67,
+        "n_capable": 109,
+        "solve_rate_capable": 0.6146788990825688,
+        "discrimination_capable": -0.12054030373116346,
+        "disc_ci_low": -0.30179908196203825,
+        "disc_ci_high": 0.06912883423882529,
+        "solve_rate_all": 0.5780346820809249,
+        "discrimination_all": 0.12354649295581697,
+        "irt_discrimination": 0.1570470497876804,
+        "annotated_difficulty": "<15 min fix",
+        "solve_rate_capable_2024": 0.9230769230769231,
+        "solve_rate_capable_2025": 0.5238095238095238,
+        "solve_rate_capable_2026": 0.9166666666666666
+      },
+      {
+        "task": "django__django-15022",
+        "n_solved_capable": 66,
+        "n_capable": 109,
+        "solve_rate_capable": 0.6055045871559633,
+        "discrimination_capable": -0.10921394770169852,
+        "disc_ci_low": -0.2913307651156271,
+        "disc_ci_high": 0.08054238311763896,
+        "solve_rate_all": 0.5202312138728323,
+        "discrimination_all": 0.26754230670650797,
+        "irt_discrimination": 0.3193276538961787,
+        "annotated_difficulty": "15 min - 1 hour",
+        "solve_rate_capable_2024": 0.8461538461538461,
+        "solve_rate_capable_2025": 0.6071428571428571,
+        "solve_rate_capable_2026": 0.3333333333333333
+      },
+      {
+        "task": "pylint-dev__pylint-7277",
+        "n_solved_capable": 63,
+        "n_capable": 109,
+        "solve_rate_capable": 0.5779816513761468,
+        "discrimination_capable": -0.09959844055385571,
+        "disc_ci_low": -0.2824093259496787,
+        "disc_ci_high": 0.0901930148787028,
+        "solve_rate_all": 0.6011560693641619,
+        "discrimination_all": 0.0045402148349000864,
+        "irt_discrimination": 0.01845045206471628,
+        "annotated_difficulty": "<15 min fix",
+        "solve_rate_capable_2024": 0.9230769230769231,
+        "solve_rate_capable_2025": 0.5952380952380952,
+        "solve_rate_capable_2026": 0.08333333333333333
+      },
+      {
+        "task": "django__django-10973",
+        "n_solved_capable": 92,
+        "n_capable": 109,
+        "solve_rate_capable": 0.8440366972477065,
+        "discrimination_capable": -0.09163836113769479,
+        "disc_ci_low": -0.27499981946358465,
+        "disc_ci_high": 0.09815529637654724,
+        "solve_rate_all": 0.7398843930635838,
+        "discrimination_all": 0.43040696137140116,
+        "irt_discrimination": 0.6303890030699134,
+        "annotated_difficulty": "15 min - 1 hour",
+        "solve_rate_capable_2024": 0.9230769230769231,
+        "solve_rate_capable_2025": 0.8928571428571429,
+        "solve_rate_capable_2026": 0.4166666666666667
+      },
+      {
+        "task": "sympy__sympy-19954",
+        "n_solved_capable": 108,
+        "n_capable": 109,
+        "solve_rate_capable": 0.9908256880733946,
+        "discrimination_capable": -0.0854217559316364,
+        "disc_ci_low": -0.26919800979411435,
+        "disc_ci_high": 0.10435676840473057,
+        "solve_rate_all": 0.8034682080924855,
+        "discrimination_all": 0.6751295264396667,
+        "irt_discrimination": 1.6758455978524183,
+        "annotated_difficulty": "<15 min fix",
+        "solve_rate_capable_2024": 1.0,
+        "solve_rate_capable_2025": 1.0,
+        "solve_rate_capable_2026": 0.9166666666666666
+      },
+      {
+        "task": "astropy__astropy-14995",
+        "n_solved_capable": 108,
+        "n_capable": 109,
+        "solve_rate_capable": 0.9908256880733946,
+        "discrimination_capable": -0.0854217559316364,
+        "disc_ci_low": -0.26919800979411435,
+        "disc_ci_high": 0.10435676840473057,
+        "solve_rate_all": 0.8728323699421965,
+        "discrimination_all": 0.6120595303388964,
+        "irt_discrimination": 1.4928747253079213,
+        "annotated_difficulty": "<15 min fix",
+        "solve_rate_capable_2024": 1.0,
+        "solve_rate_capable_2025": 1.0,
+        "solve_rate_capable_2026": 0.9166666666666666
+      },
+      {
+        "task": "matplotlib__matplotlib-23299",
+        "n_solved_capable": 4,
+        "n_capable": 109,
+        "solve_rate_capable": 0.03669724770642202,
+        "discrimination_capable": -0.08299235542375742,
+        "disc_ci_low": -0.2669270774267589,
+        "disc_ci_high": 0.10677625109530953,
+        "solve_rate_all": 0.04046242774566474,
+        "discrimination_all": -0.03106764290618373,
+        "irt_discrimination": -0.06535170169607327,
+        "annotated_difficulty": "15 min - 1 hour",
+        "solve_rate_capable_2024": 0.07692307692307693,
+        "solve_rate_capable_2025": 0.03571428571428571,
+        "solve_rate_capable_2026": 0.0
+      },
+      {
+        "task": "matplotlib__matplotlib-25287",
+        "n_solved_capable": 105,
+        "n_capable": 109,
+        "solve_rate_capable": 0.963302752293578,
+        "discrimination_capable": -0.08135253926195592,
+        "disc_ci_low": -0.2653930697541719,
+        "disc_ci_high": 0.10840810338863592,
+        "solve_rate_all": 0.8439306358381503,
+        "discrimination_all": 0.51463012790957,
+        "irt_discrimination": 0.9424442015332583,
+        "annotated_difficulty": "<15 min fix",
+        "solve_rate_capable_2024": 1.0,
+        "solve_rate_capable_2025": 0.9642857142857143,
+        "solve_rate_capable_2026": 0.9166666666666666
+      },
+      {
+        "task": "django__django-12325",
+        "n_solved_capable": 14,
+        "n_capable": 109,
+        "solve_rate_capable": 0.12844036697247707,
+        "discrimination_capable": -0.06586014694678571,
+        "disc_ci_low": -0.2508541851252317,
+        "disc_ci_high": 0.1237749494425283,
+        "solve_rate_all": 0.10982658959537572,
+        "discrimination_all": 0.06300295503951764,
+        "irt_discrimination": 0.11261571462979081,
+        "annotated_difficulty": "1-4 hours",
+        "solve_rate_capable_2024": 0.07692307692307693,
+        "solve_rate_capable_2025": 0.15476190476190477,
+        "solve_rate_capable_2026": 0.0
+      },
+      {
+        "task": "matplotlib__matplotlib-26113",
+        "n_solved_capable": 107,
+        "n_capable": 109,
+        "solve_rate_capable": 0.981651376146789,
+        "discrimination_capable": -0.06199939620240905,
+        "disc_ci_low": -0.2472180138989703,
+        "disc_ci_high": 0.12759030855780162,
+        "solve_rate_all": 0.8728323699421965,
+        "discrimination_all": 0.5226259819421043,
+        "irt_discrimination": 1.0330790673598103,
+        "annotated_difficulty": "<15 min fix",
+        "solve_rate_capable_2024": 1.0,
+        "solve_rate_capable_2025": 0.9880952380952381,
+        "solve_rate_capable_2026": 0.9166666666666666
+      },
+      {
+        "task": "django__django-11095",
+        "n_solved_capable": 108,
+        "n_capable": 109,
+        "solve_rate_capable": 0.9908256880733946,
+        "discrimination_capable": -0.04134210431318074,
+        "disc_ci_low": -0.2276733198910492,
+        "disc_ci_high": 0.14790984161098167,
+        "solve_rate_all": 0.9017341040462428,
+        "discrimination_all": 0.6235310435769874,
+        "irt_discrimination": 1.7979019894718347,
+        "annotated_difficulty": "15 min - 1 hour",
+        "solve_rate_capable_2024": 1.0,
+        "solve_rate_capable_2025": 0.9880952380952381,
+        "solve_rate_capable_2026": 1.0
+      },
+      {
+        "task": "django__django-11066",
+        "n_solved_capable": 108,
+        "n_capable": 109,
+        "solve_rate_capable": 0.9908256880733946,
+        "discrimination_capable": -0.04134210431318074,
+        "disc_ci_low": -0.2276733198910492,
+        "disc_ci_high": 0.14790984161098167,
+        "solve_rate_all": 0.953757225433526,
+        "discrimination_all": 0.40377843137835134,
+        "irt_discrimination": 0.9765233898948833,
+        "annotated_difficulty": "<15 min fix",
+        "solve_rate_capable_2024": 1.0,
+        "solve_rate_capable_2025": 0.9880952380952381,
+        "solve_rate_capable_2026": 1.0
+      },
+      {
+        "task": "scikit-learn__scikit-learn-11578",
+        "n_solved_capable": 107,
+        "n_capable": 109,
+        "solve_rate_capable": 0.981651376146789,
+        "discrimination_capable": -0.04057461358925836,
+        "disc_ci_low": -0.22694426181204744,
+        "disc_ci_high": 0.14866171756798857,
+        "solve_rate_all": 0.930635838150289,
+        "discrimination_all": 0.4360253821513367,
+        "irt_discrimination": 0.9744211993745604,
+        "annotated_difficulty": "15 min - 1 hour",
+        "solve_rate_capable_2024": 1.0,
+        "solve_rate_capable_2025": 0.9761904761904762,
+        "solve_rate_capable_2026": 1.0
+      },
+      {
+        "task": "astropy__astropy-7606",
+        "n_solved_capable": 2,
+        "n_capable": 109,
+        "solve_rate_capable": 0.01834862385321101,
+        "discrimination_capable": -0.040075624178235174,
+        "disc_ci_low": -0.22647014757606437,
+        "disc_ci_high": 0.1491504375912899,
+        "solve_rate_all": 0.046242774566473986,
+        "discrimination_all": -0.18003587225949028,
+        "irt_discrimination": -0.3074572631612539,
+        "annotated_difficulty": "15 min - 1 hour",
+        "solve_rate_capable_2024": 0.07692307692307693,
+        "solve_rate_capable_2025": 0.0,
+        "solve_rate_capable_2026": 0.08333333333333333
+      },
+      {
+        "task": "sphinx-doc__sphinx-10614",
+        "n_solved_capable": 1,
+        "n_capable": 109,
+        "solve_rate_capable": 0.009174311926605505,
+        "discrimination_capable": -0.03519024979926463,
+        "disc_ci_low": -0.22182364415176914,
+        "disc_ci_high": 0.15393039073996337,
+        "solve_rate_all": 0.011560693641618497,
+        "discrimination_all": -0.060675391993032464,
+        "irt_discrimination": -0.09093795189668165,
+        "annotated_difficulty": "15 min - 1 hour",
+        "solve_rate_capable_2024": 0.0,
+        "solve_rate_capable_2025": 0.011904761904761904,
+        "solve_rate_capable_2026": 0.0
+      },
+      {
+        "task": "sympy__sympy-19495",
+        "n_solved_capable": 72,
+        "n_capable": 109,
+        "solve_rate_capable": 0.6605504587155964,
+        "discrimination_capable": -0.03129271153379309,
+        "disc_ci_low": -0.21811058810468525,
+        "disc_ci_high": 0.15773748683305888,
+        "solve_rate_all": 0.5202312138728323,
+        "discrimination_all": 0.3848081694310347,
+        "irt_discrimination": 0.547788750522232,
+        "annotated_difficulty": "<15 min fix",
+        "solve_rate_capable_2024": 0.6923076923076923,
+        "solve_rate_capable_2025": 0.6547619047619048,
+        "solve_rate_capable_2026": 0.6666666666666666
+      },
+      {
+        "task": "django__django-13794",
+        "n_solved_capable": 4,
+        "n_capable": 109,
+        "solve_rate_capable": 0.03669724770642202,
+        "discrimination_capable": -0.0312400839716636,
+        "disc_ci_low": -0.21806041452801742,
+        "disc_ci_high": 0.15778885475296078,
+        "solve_rate_all": 0.04046242774566474,
+        "discrimination_all": -0.030143735897840834,
+        "irt_discrimination": -0.030142171279974483,
+        "annotated_difficulty": "<15 min fix",
+        "solve_rate_capable_2024": 0.0,
+        "solve_rate_capable_2025": 0.047619047619047616,
+        "solve_rate_capable_2026": 0.0
+      },
+      {
+        "task": "sympy__sympy-22456",
+        "n_solved_capable": 100,
+        "n_capable": 109,
+        "solve_rate_capable": 0.9174311926605505,
+        "discrimination_capable": -0.027881105006799228,
+        "disc_ci_low": -0.2148560180211488,
+        "disc_ci_high": 0.16106532140524646,
+        "solve_rate_all": 0.7341040462427746,
+        "discrimination_all": 0.5845721570204815,
+        "irt_discrimination": 1.0513464262526118,
+        "annotated_difficulty": "15 min - 1 hour",
+        "solve_rate_capable_2024": 1.0,
+        "solve_rate_capable_2025": 0.9166666666666666,
+        "solve_rate_capable_2026": 0.8333333333333334
+      },
+      {
+        "task": "scikit-learn__scikit-learn-25102",
+        "n_solved_capable": 46,
+        "n_capable": 109,
+        "solve_rate_capable": 0.42201834862385323,
+        "discrimination_capable": -0.013709831061909915,
+        "disc_ci_low": -0.20129245140019067,
+        "disc_ci_high": 0.17484278292859035,
+        "solve_rate_all": 0.3236994219653179,
+        "discrimination_all": 0.2649427353298338,
+        "irt_discrimination": 0.41338350742790003,
+        "annotated_difficulty": "1-4 hours",
+        "solve_rate_capable_2024": 0.5384615384615384,
+        "solve_rate_capable_2025": 0.40476190476190477,
+        "solve_rate_capable_2026": 0.4166666666666667
+      },
+      {
+        "task": "sympy__sympy-14976",
+        "n_solved_capable": 59,
+        "n_capable": 109,
+        "solve_rate_capable": 0.5412844036697247,
+        "discrimination_capable": -0.011254802073176548,
+        "disc_ci_low": -0.19893536835244696,
+        "disc_ci_high": 0.17722210750638454,
+        "solve_rate_all": 0.42196531791907516,
+        "discrimination_all": 0.3512243020850783,
+        "irt_discrimination": 0.49858888345877933,
+        "annotated_difficulty": "15 min - 1 hour",
+        "solve_rate_capable_2024": 0.8461538461538461,
+        "solve_rate_capable_2025": 0.5119047619047619,
+        "solve_rate_capable_2026": 0.4166666666666667
+      },
+      {
+        "task": "scikit-learn__scikit-learn-15100",
+        "n_solved_capable": 106,
+        "n_capable": 109,
+        "solve_rate_capable": 0.9724770642201835,
+        "discrimination_capable": -0.010000071231419466,
+        "disc_ci_low": -0.1977298572491636,
+        "disc_ci_high": 0.17843729672045977,
+        "solve_rate_all": 0.9075144508670521,
+        "discrimination_all": 0.5013729367920143,
+        "irt_discrimination": 1.0851582181963375,
+        "annotated_difficulty": "15 min - 1 hour",
+        "solve_rate_capable_2024": 1.0,
+        "solve_rate_capable_2025": 0.9761904761904762,
+        "solve_rate_capable_2026": 0.9166666666666666
+      },
+      {
+        "task": "django__django-15851",
+        "n_solved_capable": 108,
+        "n_capable": 109,
+        "solve_rate_capable": 0.9908256880733946,
+        "discrimination_capable": -0.006536066854477812,
+        "disc_ci_low": -0.19439878608866337,
+        "disc_ci_high": 0.18178915492460715,
+        "solve_rate_all": 0.8901734104046243,
+        "discrimination_all": 0.6157018847969968,
+        "irt_discrimination": 1.6465841202565796,
+        "annotated_difficulty": "<15 min fix",
+        "solve_rate_capable_2024": 1.0,
+        "solve_rate_capable_2025": 0.9880952380952381,
+        "solve_rate_capable_2026": 1.0
+      },
+      {
+        "task": "sympy__sympy-12096",
+        "n_solved_capable": 105,
+        "n_capable": 109,
+        "solve_rate_capable": 0.963302752293578,
+        "discrimination_capable": -0.0001835370497449083,
+        "disc_ci_low": -0.1882787589159154,
+        "disc_ci_high": 0.18792467272642133,
+        "solve_rate_all": 0.8728323699421965,
+        "discrimination_all": 0.5145815374469825,
+        "irt_discrimination": 1.011124247053198,
+        "annotated_difficulty": "<15 min fix",
+        "solve_rate_capable_2024": 1.0,
+        "solve_rate_capable_2025": 0.9880952380952381,
+        "solve_rate_capable_2026": 0.75
+      }
+    ],
+    "split_half_replication": {
+      "n_splits": 200,
+      "mean_n_negative_in_first_half": 31.79,
+      "mean_share_also_negative_in_second_half": 0.3829571592395088,
+      "mean_share_negative_in_second_half_overall": 0.08543457850651852
+    },
+    "scaffold_split": {
+      "n_mini_swe_agent": 33,
+      "n_other": 76,
+      "n_tasks_with_discrimination_in_both": 355,
+      "n_negative_among_other": 30,
+      "share_of_those_also_negative_among_mini": 0.36666666666666664,
+      "share_negative_among_mini_overall": 0.13802816901408452,
+      "discrimination_correlation": 0.4436558898434664
+    }
+  },
+  "dif_mini_vs_other": {
+    "focal_group": "mini-SWE-agent runs",
+    "n_focal": 33,
+    "n_reference": 76,
+    "n_flagged": 5,
+    "tasks": [
+      {
+        "task": "pylint-dev__pylint-7277",
+        "rate_mini": 0.030303030303030304,
+        "rate_other": 0.8157894736842105,
+        "odds_ratio": 0.010157194679564692,
+        "chi2": 52.130738687382106,
+        "p_value": 5.192569457992827e-13,
+        "p_holm": 2.3210785477227937e-10
+      },
+      {
+        "task": "pylint-dev__pylint-6528",
+        "rate_mini": 0.030303030303030304,
+        "rate_other": 0.6052631578947368,
+        "odds_ratio": 0.013493975903614458,
+        "chi2": 29.26670718813676,
+        "p_value": 6.307006742639733e-08,
+        "p_holm": 2.8129250072173206e-05
+      },
+      {
+        "task": "django__django-11239",
+        "rate_mini": 0.9090909090909091,
+        "rate_other": 0.5394736842105263,
+        "odds_ratio": 60.96825396825398,
+        "chi2": 17.278320401016277,
+        "p_value": 3.228494000586951e-05,
+        "p_holm": 0.01436679830261193
+      },
+      {
+        "task": "matplotlib__matplotlib-20488",
+        "rate_mini": 0.7878787878787878,
+        "rate_other": 0.39473684210526316,
+        "odds_ratio": 10.040860215053764,
+        "chi2": 16.118412372944704,
+        "p_value": 5.9502716726765374e-05,
+        "p_holm": 0.026419206226683825
+      },
+      {
+        "task": "pydata__xarray-4695",
+        "rate_mini": 1.0,
+        "rate_other": 0.6578947368421053,
+        "odds_ratio": null,
+        "chi2": 15.469012634218167,
+        "p_value": 8.386899891297355e-05,
+        "p_holm": 0.03715396651844728
+      }
+    ]
+  },
+  "cross_check": {
+    "openai_infra_23": {
+      "description": "Tasks OpenAI omitted from its SWE-bench Verified runs because their solutions \"could not run on our infrastructure\" (23 of 500).",
+      "source": "OpenAI, \"Introducing GPT-4.1 in the API\" (14 April 2025), footnote 2, https://openai.com/index/gpt-4-1/ read through the Internet Archive snapshot https://web.archive.org/web/20250415150007/https://openai.com/index/gpt-4-1/",
+      "n_listed": 23,
+      "n_listed_in_verified": 23,
+      "mean_discrimination_capable_listed": 0.19475990268965598,
+      "mean_discrimination_capable_other_tasks": 0.2544391351147686,
+      "mean_solve_rate_all_listed": 0.38678059814023624,
+      "overlaps": {
+        "negative_discrimination_capable": {
+          "n_flagged": 30,
+          "n_listed": 23,
+          "overlap": 3,
+          "overlap_tasks": [
+            "astropy__astropy-7606",
+            "matplotlib__matplotlib-23299",
+            "pylint-dev__pylint-7277"
+          ],
+          "expected_by_chance": 1.38,
+          "p_hypergeometric": 0.15296822494741144
+        },
+        "negative_or_near_zero_capable": {
+          "n_flagged": 90,
+          "n_listed": 23,
+          "overlap": 5,
+          "overlap_tasks": [
+            "astropy__astropy-7606",
+            "matplotlib__matplotlib-20676",
+            "matplotlib__matplotlib-23299",
+            "pylint-dev__pylint-7277",
+            "sphinx-doc__sphinx-7462"
+          ],
+          "expected_by_chance": 4.14,
+          "p_hypergeometric": 0.40049032401365287
+        },
+        "solved_by_no_submission": {
+          "n_flagged": 26,
+          "n_listed": 23,
+          "overlap": 1,
+          "overlap_tasks": [
+            "matplotlib__matplotlib-25479"
+          ],
+          "expected_by_chance": 1.196,
+          "p_hypergeometric": 0.7154537383513335
+        },
+        "group_dependent_dif": {
+          "n_flagged": 5,
+          "n_listed": 23,
+          "overlap": 3,
+          "overlap_tasks": [
+            "matplotlib__matplotlib-20488",
+            "pylint-dev__pylint-6528",
+            "pylint-dev__pylint-7277"
+          ],
+          "expected_by_chance": 0.23,
+          "p_hypergeometric": 0.0008043733718045068
+        },
+        "any_of_the_above": {
+          "n_flagged": 120,
+          "n_listed": 23,
+          "overlap": 8,
+          "overlap_tasks": [
+            "astropy__astropy-7606",
+            "matplotlib__matplotlib-20488",
+            "matplotlib__matplotlib-20676",
+            "matplotlib__matplotlib-23299",
+            "matplotlib__matplotlib-25479",
+            "pylint-dev__pylint-6528",
+            "pylint-dev__pylint-7277",
+            "sphinx-doc__sphinx-7462"
+          ],
+          "expected_by_chance": 5.52,
+          "p_hypergeometric": 0.16042961468397285
+        }
+      },
+      "listed_tasks": [
+        {
+          "task": "astropy__astropy-7606",
+          "n_solved_all": 8,
+          "solve_rate_capable": 0.01834862385321101,
+          "discrimination_capable": -0.040075624178235174,
+          "flag_capable": "negative_discrimination",
+          "dif": false
+        },
+        {
+          "task": "astropy__astropy-8707",
+          "n_solved_all": 11,
+          "solve_rate_capable": 0.05504587155963303,
+          "discrimination_capable": 0.1789576520710717,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "astropy__astropy-8872",
+          "n_solved_all": 10,
+          "solve_rate_capable": 0.05504587155963303,
+          "discrimination_capable": 0.18576226928531328,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "django__django-10097",
+          "n_solved_all": 58,
+          "solve_rate_capable": 0.3944954128440367,
+          "discrimination_capable": 0.14261073646002081,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "django__django-7530",
+          "n_solved_all": 147,
+          "solve_rate_capable": 0.944954128440367,
+          "discrimination_capable": 0.26657372566484355,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "matplotlib__matplotlib-20488",
+          "n_solved_all": 62,
+          "solve_rate_capable": 0.5137614678899083,
+          "discrimination_capable": 0.48852783484821993,
+          "flag_capable": "",
+          "dif": true
+        },
+        {
+          "task": "matplotlib__matplotlib-20676",
+          "n_solved_all": 26,
+          "solve_rate_capable": 0.22018348623853212,
+          "discrimination_capable": 0.06577717963774876,
+          "flag_capable": "near_zero_discrimination",
+          "dif": false
+        },
+        {
+          "task": "matplotlib__matplotlib-20826",
+          "n_solved_all": 54,
+          "solve_rate_capable": 0.43119266055045874,
+          "discrimination_capable": 0.35449854058835,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "matplotlib__matplotlib-23299",
+          "n_solved_all": 7,
+          "solve_rate_capable": 0.03669724770642202,
+          "discrimination_capable": -0.08299235542375742,
+          "flag_capable": "negative_discrimination",
+          "dif": false
+        },
+        {
+          "task": "matplotlib__matplotlib-24970",
+          "n_solved_all": 139,
+          "solve_rate_capable": 0.944954128440367,
+          "discrimination_capable": 0.13920140742515677,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "matplotlib__matplotlib-25479",
+          "n_solved_all": 0,
+          "solve_rate_capable": 0.0,
+          "discrimination_capable": null,
+          "flag_capable": "solved_by_none",
+          "dif": false
+        },
+        {
+          "task": "matplotlib__matplotlib-26342",
+          "n_solved_all": 138,
+          "solve_rate_capable": 0.9541284403669725,
+          "discrimination_capable": 0.17370701640084674,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "psf__requests-6028",
+          "n_solved_all": 11,
+          "solve_rate_capable": 0.10091743119266056,
+          "discrimination_capable": 0.36397249885052274,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "pylint-dev__pylint-6528",
+          "n_solved_all": 56,
+          "solve_rate_capable": 0.43119266055045874,
+          "discrimination_capable": 0.21190237765268258,
+          "flag_capable": "",
+          "dif": true
+        },
+        {
+          "task": "pylint-dev__pylint-7080",
+          "n_solved_all": 32,
+          "solve_rate_capable": 0.22935779816513763,
+          "discrimination_capable": 0.11031829652482421,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "pylint-dev__pylint-7277",
+          "n_solved_all": 104,
+          "solve_rate_capable": 0.5779816513761468,
+          "discrimination_capable": -0.09959844055385571,
+          "flag_capable": "negative_discrimination",
+          "dif": true
+        },
+        {
+          "task": "pytest-dev__pytest-5262",
+          "n_solved_all": 128,
+          "solve_rate_capable": 0.9541284403669725,
+          "discrimination_capable": 0.26486305248761294,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "pytest-dev__pytest-7521",
+          "n_solved_all": 119,
+          "solve_rate_capable": 0.926605504587156,
+          "discrimination_capable": 0.2251414919347639,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "scikit-learn__scikit-learn-12973",
+          "n_solved_all": 116,
+          "solve_rate_capable": 0.8165137614678899,
+          "discrimination_capable": 0.21201916074927557,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "sphinx-doc__sphinx-10466",
+          "n_solved_all": 136,
+          "solve_rate_capable": 0.944954128440367,
+          "discrimination_capable": 0.2607359749876655,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "sphinx-doc__sphinx-7462",
+          "n_solved_all": 1,
+          "solve_rate_capable": 0.009174311926605505,
+          "discrimination_capable": 0.06924753602677453,
+          "flag_capable": "near_zero_discrimination",
+          "dif": false
+        },
+        {
+          "task": "sphinx-doc__sphinx-8265",
+          "n_solved_all": 28,
+          "solve_rate_capable": 0.25688073394495414,
+          "discrimination_capable": 0.5451671923082266,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "sphinx-doc__sphinx-9367",
+          "n_solved_all": 148,
+          "solve_rate_capable": 0.963302752293578,
+          "discrimination_capable": 0.24840033542435955,
+          "flag_capable": "",
+          "dif": false
+        }
+      ]
+    },
+    "openai_2026_flawed_test_examples": {
+      "description": "The three tasks OpenAI names as examples of flawed tests in its 2026 audit (tests that import a function name the issue never mentions, tests covering issues the task description leaves out, tests requiring an unspecified parameter). The audit covered 138 tasks and reports material issues in 59.4% of them, but the full list is not published.",
+      "source": "OpenAI, \"Why SWE-bench Verified no longer measures frontier coding capabilities\" (23 February 2026), https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/ read through the Internet Archive snapshot https://web.archive.org/web/20260224082405/https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/",
+      "n_listed": 3,
+      "n_listed_in_verified": 3,
+      "mean_discrimination_capable_listed": 0.24755759660425106,
+      "mean_discrimination_capable_other_tasks": 0.25151962941514744,
+      "mean_solve_rate_all_listed": 0.03275529865125241,
+      "overlaps": {
+        "negative_discrimination_capable": {
+          "n_flagged": 30,
+          "n_listed": 3,
+          "overlap": 0,
+          "overlap_tasks": [],
+          "expected_by_chance": 0.18,
+          "p_hypergeometric": 1.0
+        },
+        "negative_or_near_zero_capable": {
+          "n_flagged": 90,
+          "n_listed": 3,
+          "overlap": 0,
+          "overlap_tasks": [],
+          "expected_by_chance": 0.54,
+          "p_hypergeometric": 1.0
+        },
+        "solved_by_no_submission": {
+          "n_flagged": 26,
+          "n_listed": 3,
+          "overlap": 1,
+          "overlap_tasks": [
+            "pylint-dev__pylint-4551"
+          ],
+          "expected_by_chance": 0.156,
+          "p_hypergeometric": 0.1483099210469131
+        },
+        "group_dependent_dif": {
+          "n_flagged": 5,
+          "n_listed": 3,
+          "overlap": 0,
+          "overlap_tasks": [],
+          "expected_by_chance": 0.03,
+          "p_hypergeometric": 1.0
+        },
+        "any_of_the_above": {
+          "n_flagged": 120,
+          "n_listed": 3,
+          "overlap": 1,
+          "overlap_tasks": [
+            "pylint-dev__pylint-4551"
+          ],
+          "expected_by_chance": 0.72,
+          "p_hypergeometric": 0.5618581741796848
+        }
+      },
+      "listed_tasks": [
+        {
+          "task": "django__django-14725",
+          "n_solved_all": 16,
+          "solve_rate_capable": 0.13761467889908258,
+          "discrimination_capable": 0.39336566832850123,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "pylint-dev__pylint-4551",
+          "n_solved_all": 0,
+          "solve_rate_capable": 0.0,
+          "discrimination_capable": null,
+          "flag_capable": "solved_by_none",
+          "dif": false
+        },
+        {
+          "task": "sympy__sympy-18199",
+          "n_solved_all": 1,
+          "solve_rate_capable": 0.009174311926605505,
+          "discrimination_capable": 0.1017495248800009,
+          "flag_capable": "",
+          "dif": false
+        }
+      ]
+    },
+    "utboost_insufficient_tests": {
+      "description": "Tasks for which UTBoost confirmed augmented test cases because the original tests let incorrect patches pass (36 ids across SWE-bench Lite and Verified; the script keeps those that are in Verified). These are tasks that are too easy to pass, a different defect from the ones discrimination statistics look for.",
+      "source": "Yu, Zhu, He and Kang, \"UTBoost: Rigorous Evaluation of Coding Agents on SWE-Bench\" (arXiv:2506.09289); list taken from assets/useful_scripts/augTest.json in https://github.com/CUHK-Shenzhen-SE/UTBoost at commit 4f32782517f23940d3ede8cd1f250667873cc0c6",
+      "n_listed": 36,
+      "n_listed_in_verified": 26,
+      "mean_discrimination_capable_listed": 0.18482343963531192,
+      "mean_discrimination_capable_other_tasks": 0.25528507737990924,
+      "mean_solve_rate_all_listed": 0.7007558915073365,
+      "overlaps": {
+        "negative_discrimination_capable": {
+          "n_flagged": 30,
+          "n_listed": 26,
+          "overlap": 1,
+          "overlap_tasks": [
+            "django__django-12325"
+          ],
+          "expected_by_chance": 1.56,
+          "p_hypergeometric": 0.8082888562651609
+        },
+        "negative_or_near_zero_capable": {
+          "n_flagged": 90,
+          "n_listed": 26,
+          "overlap": 6,
+          "overlap_tasks": [
+            "django__django-12325",
+            "django__django-14787",
+            "django__django-15499",
+            "django__django-16116",
+            "django__django-16139",
+            "django__django-16485"
+          ],
+          "expected_by_chance": 4.68,
+          "p_hypergeometric": 0.31908569789894986
+        },
+        "solved_by_no_submission": {
+          "n_flagged": 26,
+          "n_listed": 26,
+          "overlap": 0,
+          "overlap_tasks": [],
+          "expected_by_chance": 1.352,
+          "p_hypergeometric": 1.0
+        },
+        "group_dependent_dif": {
+          "n_flagged": 5,
+          "n_listed": 26,
+          "overlap": 0,
+          "overlap_tasks": [],
+          "expected_by_chance": 0.26,
+          "p_hypergeometric": 1.0
+        },
+        "any_of_the_above": {
+          "n_flagged": 120,
+          "n_listed": 26,
+          "overlap": 6,
+          "overlap_tasks": [
+            "django__django-12325",
+            "django__django-14787",
+            "django__django-15499",
+            "django__django-16116",
+            "django__django-16139",
+            "django__django-16485"
+          ],
+          "expected_by_chance": 6.24,
+          "p_hypergeometric": 0.6234002908625259
+        }
+      },
+      "listed_tasks": [
+        {
+          "task": "django__django-11133",
+          "n_solved_all": 161,
+          "solve_rate_capable": 0.981651376146789,
+          "discrimination_capable": 0.1655847077578189,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "django__django-12325",
+          "n_solved_all": 19,
+          "solve_rate_capable": 0.12844036697247707,
+          "discrimination_capable": -0.06586014694678571,
+          "flag_capable": "negative_discrimination",
+          "dif": false
+        },
+        {
+          "task": "django__django-13401",
+          "n_solved_all": 112,
+          "solve_rate_capable": 0.8073394495412844,
+          "discrimination_capable": 0.12509502241568457,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "django__django-13809",
+          "n_solved_all": 133,
+          "solve_rate_capable": 0.926605504587156,
+          "discrimination_capable": 0.19876939004562988,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "django__django-14787",
+          "n_solved_all": 136,
+          "solve_rate_capable": 0.9724770642201835,
+          "discrimination_capable": 0.09687776246153544,
+          "flag_capable": "near_zero_discrimination",
+          "dif": false
+        },
+        {
+          "task": "django__django-14915",
+          "n_solved_all": 159,
+          "solve_rate_capable": 1.0,
+          "discrimination_capable": null,
+          "flag_capable": "solved_by_all",
+          "dif": false
+        },
+        {
+          "task": "django__django-15499",
+          "n_solved_all": 146,
+          "solve_rate_capable": 0.9908256880733946,
+          "discrimination_capable": 0.005067183762580484,
+          "flag_capable": "near_zero_discrimination",
+          "dif": false
+        },
+        {
+          "task": "django__django-16116",
+          "n_solved_all": 139,
+          "solve_rate_capable": 0.9908256880733946,
+          "discrimination_capable": 0.00970865737824286,
+          "flag_capable": "near_zero_discrimination",
+          "dif": false
+        },
+        {
+          "task": "django__django-16139",
+          "n_solved_all": 160,
+          "solve_rate_capable": 0.9724770642201835,
+          "discrimination_capable": 0.0008188993494605144,
+          "flag_capable": "near_zero_discrimination",
+          "dif": false
+        },
+        {
+          "task": "django__django-16485",
+          "n_solved_all": 154,
+          "solve_rate_capable": 0.9908256880733946,
+          "discrimination_capable": 0.06077140715051625,
+          "flag_capable": "near_zero_discrimination",
+          "dif": false
+        },
+        {
+          "task": "django__django-16595",
+          "n_solved_all": 154,
+          "solve_rate_capable": 0.981651376146789,
+          "discrimination_capable": 0.15733304940976237,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "matplotlib__matplotlib-14623",
+          "n_solved_all": 90,
+          "solve_rate_capable": 0.7614678899082569,
+          "discrimination_capable": 0.45575642866666766,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "matplotlib__matplotlib-23314",
+          "n_solved_all": 129,
+          "solve_rate_capable": 0.9174311926605505,
+          "discrimination_capable": 0.15153915357372397,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "pydata__xarray-3305",
+          "n_solved_all": 128,
+          "solve_rate_capable": 0.8990825688073395,
+          "discrimination_capable": 0.18979675699888063,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "pydata__xarray-4687",
+          "n_solved_all": 39,
+          "solve_rate_capable": 0.3211009174311927,
+          "discrimination_capable": 0.4229100764290428,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "pydata__xarray-7393",
+          "n_solved_all": 92,
+          "solve_rate_capable": 0.7706422018348624,
+          "discrimination_capable": 0.5041844950516775,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "pylint-dev__pylint-7080",
+          "n_solved_all": 32,
+          "solve_rate_capable": 0.22935779816513763,
+          "discrimination_capable": 0.11031829652482421,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "scikit-learn__scikit-learn-14087",
+          "n_solved_all": 79,
+          "solve_rate_capable": 0.6697247706422018,
+          "discrimination_capable": 0.21750291084078385,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "scikit-learn__scikit-learn-14894",
+          "n_solved_all": 161,
+          "solve_rate_capable": 1.0,
+          "discrimination_capable": null,
+          "flag_capable": "solved_by_all",
+          "dif": false
+        },
+        {
+          "task": "sphinx-doc__sphinx-7440",
+          "n_solved_all": 117,
+          "solve_rate_capable": 0.8348623853211009,
+          "discrimination_capable": 0.1414759399283558,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "sympy__sympy-14531",
+          "n_solved_all": 114,
+          "solve_rate_capable": 0.8256880733944955,
+          "discrimination_capable": 0.4448445345744806,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "sympy__sympy-16450",
+          "n_solved_all": 143,
+          "solve_rate_capable": 0.963302752293578,
+          "discrimination_capable": 0.2590159154492051,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "sympy__sympy-17655",
+          "n_solved_all": 120,
+          "solve_rate_capable": 0.8807339449541285,
+          "discrimination_capable": 0.25297226044852283,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "sympy__sympy-20154",
+          "n_solved_all": 143,
+          "solve_rate_capable": 0.981651376146789,
+          "discrimination_capable": 0.21345302272571146,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "sympy__sympy-21847",
+          "n_solved_all": 151,
+          "solve_rate_capable": 0.9908256880733946,
+          "discrimination_capable": 0.13738802332124517,
+          "flag_capable": "",
+          "dif": false
+        },
+        {
+          "task": "sympy__sympy-22714",
+          "n_solved_all": 141,
+          "solve_rate_capable": 0.981651376146789,
+          "discrimination_capable": 0.18043880392991954,
+          "flag_capable": "",
+          "dif": false
+        }
+      ]
+    }
+  },
+  "flagged_set_sizes": {
+    "negative_discrimination_capable": 30,
+    "negative_or_near_zero_capable": 90,
+    "solved_by_no_submission": 26,
+    "group_dependent_dif": 5,
+    "any_of_the_above": 120
+  },
+  "irt": {
+    "model": "2PL, marginal maximum likelihood, normal priors on slope (1, 1) and intercept (0, 3)",
+    "converged": true,
+    "n_iter": 181,
+    "log_likelihood": -25522.932250104925,
+    "n_tasks_negative_slope": 7,
+    "tasks_negative_slope": [
+      "astropy__astropy-7606",
+      "django__django-11790",
+      "django__django-13794",
+      "matplotlib__matplotlib-23299",
+      "matplotlib__matplotlib-23476",
+      "sphinx-doc__sphinx-10614",
+      "sympy__sympy-18763"
+    ],
+    "slope_quartiles": [
+      0.8552463139943418,
+      1.2482970517737113,
+      1.648891513753227
+    ],
+    "ability_accuracy_spearman": 0.9974527409687628,
+    "slope_vs_ctt_discrimination_spearman": 0.8176302195698266,
+    "effective_n_tasks_all_submissions": 287.95753426444554,
+    "effective_n_tasks_top": 103.71518724188088,
+    "n_tasks_for_90pct_information_all_submissions": 286,
+    "n_tasks_for_90pct_information_top": 169,
+    "n_tasks_for_50pct_information_top": 36,
+    "top_ability_min": 1.8729954927809016,
+    "top_ability_median": 2.238428852606617,
+    "top_ability_max": 3.147807497318891,
+    "ability_of_peak_information": -0.2999999999999998,
+    "peak_information": 119.85036175037663,
+    "information_at_median_top_ability": 42.81611357437773,
+    "peak_information_over_information_at_median_top_ability": 2.7991882435144273,
+    "test_information": [
+      {
+        "ability": -3.0,
+        "information": 50.563927240689594
+      },
+      {
+        "ability": -2.5,
+        "information": 65.984217278654
+      },
+      {
+        "ability": -2.0,
+        "information": 82.37887213016141
+      },
+      {
+        "ability": -1.5,
+        "information": 98.2173842284367
+      },
+      {
+        "ability": -1.0,
+        "information": 110.97861500363122
+      },
+      {
+        "ability": -0.5,
+        "information": 118.82631471411051
+      },
+      {
+        "ability": 0.0,
+        "information": 117.82137786734297
+      },
+      {
+        "ability": 0.5,
+        "information": 102.8562683851644
+      },
+      {
+        "ability": 1.0,
+        "information": 80.19620059037759
+      },
+      {
+        "ability": 1.5,
+        "information": 61.94360478404733
+      },
+      {
+        "ability": 2.0,
+        "information": 48.6723941016371
+      },
+      {
+        "ability": 2.5,
+        "information": 36.63202141736746
+      },
+      {
+        "ability": 3.0,
+        "information": 26.481036170554635
+      },
+      {
+        "ability": 3.5,
+        "information": 19.298283522043487
+      },
+      {
+        "ability": 4.0,
+        "information": 14.528193238205981
+      }
+    ]
+  },
+  "ordering": {
+    "flags_from_capable_systems_outside_top": {
+      "n_reference_systems": 89,
+      "n_tasks_removed": 174,
+      "n_tasks_remaining": 326,
+      "kendall_tau_b": 0.7650730147727097,
+      "spearman": 0.888848469040032,
+      "n_systems_whose_rank_changed": 16,
+      "max_rank_shift": 7,
+      "top_system_before": "20251205_sonar-foundation-agent_claude-opus-4-5",
+      "systems_ranked_first_after": [
+        "20251205_sonar-foundation-agent_claude-opus-4-5"
+      ],
+      "n_adjacent_indistinguishable_after": 19,
+      "n_pairs_indistinguishable_after": 185,
+      "n_pairs": 190,
+      "table": [
+        {
+          "system": "20251205_sonar-foundation-agent_claude-opus-4-5",
+          "resolved_before": 0.792,
+          "rank_before": 1,
+          "resolved_after": 0.8926380368098159,
+          "rank_after": 1
+        },
+        {
+          "system": "20251215_livesweagent_claude-opus-4-5",
+          "resolved_before": 0.792,
+          "rank_before": 1,
+          "resolved_after": 0.8803680981595092,
+          "rank_after": 2
+        },
+        {
+          "system": "20250928_trae_doubao_seed_code",
+          "resolved_before": 0.788,
+          "rank_before": 3,
+          "resolved_after": 0.8619631901840491,
+          "rank_after": 3
+        },
+        {
+          "system": "20251127_openhands_claude-opus-4-5",
+          "resolved_before": 0.776,
+          "rank_before": 4,
+          "resolved_after": 0.8619631901840491,
+          "rank_after": 3
+        },
+        {
+          "system": "20251120_livesweagent_gemini-3-pro-preview",
+          "resolved_before": 0.774,
+          "rank_before": 5,
+          "resolved_after": 0.8466257668711656,
+          "rank_after": 7
+        },
+        {
+          "system": "20250804_epam-ai-run-claude-4-sonnet",
+          "resolved_before": 0.768,
+          "rank_before": 6,
+          "resolved_after": 0.843558282208589,
+          "rank_after": 9
+        },
+        {
+          "system": "20250902_atlassian-rovo-dev",
+          "resolved_before": 0.768,
+          "rank_before": 6,
+          "resolved_after": 0.8496932515337423,
+          "rank_after": 6
+        },
+        {
+          "system": "20260217_mini-v2.0.0_claude-4-5-opus-high",
+          "resolved_before": 0.768,
+          "rank_before": 6,
+          "resolved_after": 0.852760736196319,
+          "rank_after": 5
+        },
+        {
+          "system": "20250819_ACoder",
+          "resolved_before": 0.764,
+          "rank_before": 9,
+          "resolved_after": 0.8159509202453987,
+          "rank_after": 16
+        },
+        {
+          "system": "20260217_mini-v2.0.0_gemini-3-flash-high",
+          "resolved_before": 0.758,
+          "rank_before": 10,
+          "resolved_after": 0.8374233128834356,
+          "rank_after": 10
+        },
+        {
+          "system": "20260217_mini-v2.0.0_minimax-2-5-high",
+          "resolved_before": 0.758,
+          "rank_before": 10,
+          "resolved_after": 0.8251533742331288,
+          "rank_after": 13
+        },
+        {
+          "system": "20250901_warp",
+          "resolved_before": 0.756,
+          "rank_before": 12,
+          "resolved_after": 0.8466257668711656,
+          "rank_after": 7
+        },
+        {
+          "system": "20260217_mini-v2.0.0_claude-4-6-opus",
+          "resolved_before": 0.756,
+          "rank_before": 12,
+          "resolved_after": 0.8374233128834356,
+          "rank_after": 10
+        },
+        {
+          "system": "20250612_trae",
+          "resolved_before": 0.752,
+          "rank_before": 14,
+          "resolved_after": 0.8251533742331288,
+          "rank_after": 13
+        },
+        {
+          "system": "20250731_harness_ai",
+          "resolved_before": 0.748,
+          "rank_before": 15,
+          "resolved_after": 0.8128834355828221,
+          "rank_after": 18
+        },
+        {
+          "system": "20251103_sonar-foundation-agent_claude-sonnet-4-5",
+          "resolved_before": 0.748,
+          "rank_before": 15,
+          "resolved_after": 0.8282208588957055,
+          "rank_after": 12
+        },
+        {
+          "system": "20250720_Lingxi-v1.5_claude-4-sonnet-20250514",
+          "resolved_before": 0.746,
+          "rank_before": 17,
+          "resolved_after": 0.8190184049079755,
+          "rank_after": 15
+        },
+        {
+          "system": "20250915_JoyCode",
+          "resolved_before": 0.746,
+          "rank_before": 17,
+          "resolved_after": 0.803680981595092,
+          "rank_after": 19
+        },
+        {
+          "system": "20250603_Refact_Agent_claude-4-sonnet",
+          "resolved_before": 0.744,
+          "rank_before": 19,
+          "resolved_after": 0.8006134969325154,
+          "rank_after": 20
+        },
+        {
+          "system": "20251015_Prometheus_v1.2.1_gpt5",
+          "resolved_before": 0.744,
+          "rank_before": 19,
+          "resolved_after": 0.8159509202453987,
+          "rank_after": 16
+        }
+      ],
+      "random_removal_baseline": {
+        "n_draws": 1000,
+        "kendall_tau_b_mean": 0.7323703593210624,
+        "kendall_tau_b_p05": 0.5968244661865759,
+        "kendall_tau_b_p95": 0.8476906508544898
+      }
+    },
+    "flags_from_all_capable_systems": {
+      "n_reference_systems": 109,
+      "n_tasks_removed": 143,
+      "n_tasks_remaining": 357,
+      "kendall_tau_b": 0.7957141777636697,
+      "spearman": 0.9213931473880015,
+      "n_systems_whose_rank_changed": 18,
+      "max_rank_shift": 5,
+      "top_system_before": "20251205_sonar-foundation-agent_claude-opus-4-5",
+      "systems_ranked_first_after": [
+        "20251205_sonar-foundation-agent_claude-opus-4-5"
+      ],
+      "n_adjacent_indistinguishable_after": 19,
+      "n_pairs_indistinguishable_after": 181,
+      "n_pairs": 190,
+      "table": [
+        {
+          "system": "20251205_sonar-foundation-agent_claude-opus-4-5",
+          "resolved_before": 0.792,
+          "rank_before": 1,
+          "resolved_after": 0.8739495798319328,
+          "rank_after": 1
+        },
+        {
+          "system": "20251215_livesweagent_claude-opus-4-5",
+          "resolved_before": 0.792,
+          "rank_before": 1,
+          "resolved_after": 0.8571428571428571,
+          "rank_after": 2
+        },
+        {
+          "system": "20250928_trae_doubao_seed_code",
+          "resolved_before": 0.788,
+          "rank_before": 3,
+          "resolved_after": 0.8403361344537815,
+          "rank_after": 4
+        },
+        {
+          "system": "20251127_openhands_claude-opus-4-5",
+          "resolved_before": 0.776,
+          "rank_before": 4,
+          "resolved_after": 0.8431372549019608,
+          "rank_after": 3
+        },
+        {
+          "system": "20251120_livesweagent_gemini-3-pro-preview",
+          "resolved_before": 0.774,
+          "rank_before": 5,
+          "resolved_after": 0.8263305322128851,
+          "rank_after": 6
+        },
+        {
+          "system": "20250804_epam-ai-run-claude-4-sonnet",
+          "resolved_before": 0.768,
+          "rank_before": 6,
+          "resolved_after": 0.8207282913165266,
+          "rank_after": 8
+        },
+        {
+          "system": "20250902_atlassian-rovo-dev",
+          "resolved_before": 0.768,
+          "rank_before": 6,
+          "resolved_after": 0.8207282913165266,
+          "rank_after": 8
+        },
+        {
+          "system": "20260217_mini-v2.0.0_claude-4-5-opus-high",
+          "resolved_before": 0.768,
+          "rank_before": 6,
+          "resolved_after": 0.8375350140056023,
+          "rank_after": 5
+        },
+        {
+          "system": "20250819_ACoder",
+          "resolved_before": 0.764,
+          "rank_before": 9,
+          "resolved_after": 0.8011204481792717,
+          "rank_after": 14
+        },
+        {
+          "system": "20260217_mini-v2.0.0_gemini-3-flash-high",
+          "resolved_before": 0.758,
+          "rank_before": 10,
+          "resolved_after": 0.8179271708683473,
+          "rank_after": 10
+        },
+        {
+          "system": "20260217_mini-v2.0.0_minimax-2-5-high",
+          "resolved_before": 0.758,
+          "rank_before": 10,
+          "resolved_after": 0.8123249299719888,
+          "rank_after": 12
+        },
+        {
+          "system": "20250901_warp",
+          "resolved_before": 0.756,
+          "rank_before": 12,
+          "resolved_after": 0.8235294117647058,
+          "rank_after": 7
+        },
+        {
+          "system": "20260217_mini-v2.0.0_claude-4-6-opus",
+          "resolved_before": 0.756,
+          "rank_before": 12,
+          "resolved_after": 0.8151260504201681,
+          "rank_after": 11
+        },
+        {
+          "system": "20250612_trae",
+          "resolved_before": 0.752,
+          "rank_before": 14,
+          "resolved_after": 0.7955182072829131,
+          "rank_after": 15
+        },
+        {
+          "system": "20250731_harness_ai",
+          "resolved_before": 0.748,
+          "rank_before": 15,
+          "resolved_after": 0.7871148459383753,
+          "rank_after": 18
+        },
+        {
+          "system": "20251103_sonar-foundation-agent_claude-sonnet-4-5",
+          "resolved_before": 0.748,
+          "rank_before": 15,
+          "resolved_after": 0.8123249299719888,
+          "rank_after": 12
+        },
+        {
+          "system": "20250720_Lingxi-v1.5_claude-4-sonnet-20250514",
+          "resolved_before": 0.746,
+          "rank_before": 17,
+          "resolved_after": 0.7871148459383753,
+          "rank_after": 18
+        },
+        {
+          "system": "20250915_JoyCode",
+          "resolved_before": 0.746,
+          "rank_before": 17,
+          "resolved_after": 0.7899159663865546,
+          "rank_after": 16
+        },
+        {
+          "system": "20250603_Refact_Agent_claude-4-sonnet",
+          "resolved_before": 0.744,
+          "rank_before": 19,
+          "resolved_after": 0.7759103641456583,
+          "rank_after": 20
+        },
+        {
+          "system": "20251015_Prometheus_v1.2.1_gpt5",
+          "resolved_before": 0.744,
+          "rank_before": 19,
+          "resolved_after": 0.7899159663865546,
+          "rank_after": 16
+        }
+      ],
+      "random_removal_baseline": {
+        "n_draws": 1000,
+        "kendall_tau_b_mean": 0.7650518147190819,
+        "kendall_tau_b_p05": 0.6479036096064577,
+        "kendall_tau_b_p95": 0.8681449727014405
+      }
+    }
+  },
+  "unusual_systems": [
+    {
+      "system": "20260901_mini-v2.4.2_gemini-3-5-flash",
+      "resolved_rate": 0.718,
+      "guttman_norm": 0.1656887729903791,
+      "guttman_expected": 0.052770566101780075,
+      "guttman_z": 11.897937065050105,
+      "n_hard_solved": 17,
+      "n_easy_failed": 2,
+      "mini_swe_agent": true,
+      "n_tasks_without_a_patch": 59,
+      "n_instances_in_per_instance_file": 441
+    },
+    {
+      "system": "20250110_learn_by_interact_claude3.5",
+      "resolved_rate": 0.602,
+      "guttman_norm": 0.1530075627305965,
+      "guttman_expected": 0.07531740654886704,
+      "guttman_z": 8.210550455541979,
+      "n_hard_solved": 5,
+      "n_easy_failed": 6,
+      "mini_swe_agent": false,
+      "n_tasks_without_a_patch": 0,
+      "n_instances_in_per_instance_file": null
+    },
+    {
+      "system": "20251209_mini-v1.17.2_devstral-2512",
+      "resolved_rate": 0.538,
+      "guttman_norm": 0.15579587698546807,
+      "guttman_expected": 0.0762444570332444,
+      "guttman_z": 7.033299658082594,
+      "n_hard_solved": 1,
+      "n_easy_failed": 8,
+      "mini_swe_agent": true,
+      "n_tasks_without_a_patch": null,
+      "n_instances_in_per_instance_file": 500
+    },
+    {
+      "system": "20250807_mini-v1.7.0_kimi-k2-instruct",
+      "resolved_rate": 0.438,
+      "guttman_norm": 0.16358731861096215,
+      "guttman_expected": 0.08881913081832789,
+      "guttman_z": 6.166799024388026,
+      "n_hard_solved": 0,
+      "n_easy_failed": 12,
+      "mini_swe_agent": true,
+      "n_tasks_without_a_patch": null,
+      "n_instances_in_per_instance_file": 500
+    },
+    {
+      "system": "20250627_agentless_MCTS-Refine-7B",
+      "resolved_rate": 0.232,
+      "guttman_norm": 0.20689655172413793,
+      "guttman_expected": 0.12029489292290432,
+      "guttman_z": 5.505483675117391,
+      "n_hard_solved": 6,
+      "n_easy_failed": 23,
+      "mini_swe_agent": false,
+      "n_tasks_without_a_patch": 39,
+      "n_instances_in_per_instance_file": null
+    },
+    {
+      "system": "20251211_mini-v1.17.2_gpt-5.2-2025-12-11",
+      "resolved_rate": 0.69,
+      "guttman_norm": 0.1124450677886863,
+      "guttman_expected": 0.0563541131874933,
+      "guttman_z": 5.235415754368361,
+      "n_hard_solved": 6,
+      "n_easy_failed": 6,
+      "mini_swe_agent": true,
+      "n_tasks_without_a_patch": null,
+      "n_instances_in_per_instance_file": 500
+    },
+    {
+      "system": "20251209_mini-v1.17.2_devstral-small-2512",
+      "resolved_rate": 0.564,
+      "guttman_norm": 0.12164096558006376,
+      "guttman_expected": 0.07623290435407813,
+      "guttman_z": 4.163574289670869,
+      "n_hard_solved": 2,
+      "n_easy_failed": 5,
+      "mini_swe_agent": true,
+      "n_tasks_without_a_patch": null,
+      "n_instances_in_per_instance_file": 500
+    },
+    {
+      "system": "20251201_mini-v1.17.1_deepseek-v3.2-reasoner",
+      "resolved_rate": 0.6,
+      "guttman_norm": 0.11158333333333334,
+      "guttman_expected": 0.06964022492439875,
+      "guttman_z": 4.082485740459078,
+      "n_hard_solved": 2,
+      "n_easy_failed": 2,
+      "mini_swe_agent": true,
+      "n_tasks_without_a_patch": null,
+      "n_instances_in_per_instance_file": 500
+    },
+    {
+      "system": "20260217_mini-v2.0.0_glm-5-high",
+      "resolved_rate": 0.728,
+      "guttman_norm": 0.08740707821590174,
+      "guttman_expected": 0.05094036361899208,
+      "guttman_z": 3.77800787207781,
+      "n_hard_solved": 8,
+      "n_easy_failed": 2,
+      "mini_swe_agent": true,
+      "n_tasks_without_a_patch": null,
+      "n_instances_in_per_instance_file": 500
+    }
+  ],
+  "unusual_systems_summary": {
+    "n_flagged": 9,
+    "n_flagged_mini_swe_agent": 7,
+    "n_mini_swe_agent_in_matrix": 39,
+    "guttman_z_median": -0.5715645371688781,
+    "guttman_z_sd": 2.1754785393450757,
+    "share_of_systems_with_z_above_2": 0.11560693641618497
+  },
+  "task_notes": [
+    {
+      "task": "pylint-dev__pylint-7277",
+      "n_solved_all": 104,
+      "n_all": 173,
+      "n_solved_capable": 63,
+      "n_capable": 109,
+      "discrimination_capable": -0.09959844055385571,
+      "rate_mini": 0.030303030303030304,
+      "rate_other": 0.8157894736842105,
+      "annotated_difficulty": "<15 min fix",
+      "on_openai_infra_list": true,
+      "reading": "The only FAIL_TO_PASS test is tests/test_self.py::TestRunTC::test_modify_sys_path, which builds expectations from the current working directory and sys.path. The reference patch is three lines. A test like this can pass or fail depending on where and how the test process is started, which would explain why one group of submissions almost never passes it while another usually does. It is on OpenAI's list of 23 tasks that could not run on their infrastructure."
+    },
+    {
+      "task": "pylint-dev__pylint-6528",
+      "n_solved_all": 56,
+      "n_all": 173,
+      "n_solved_capable": 47,
+      "n_capable": 109,
+      "discrimination_capable": 0.21190237765268258,
+      "rate_mini": 0.030303030303030304,
+      "rate_other": 0.6052631578947368,
+      "annotated_difficulty": "15 min - 1 hour",
+      "on_openai_infra_list": true,
+      "reading": "Two of the four FAIL_TO_PASS tests are again in tests/test_self.py::TestRunTC (test_ignore_recursive, test_ignore_pattern_recursive), the same test class as pylint-7277, and the task shows the same split between the two groups of submissions. Also on OpenAI's list of 23. I read this as the same environment sensitivity, not as a difference in what the systems wrote."
+    },
+    {
+      "task": "matplotlib__matplotlib-20488",
+      "n_solved_all": 62,
+      "n_all": 173,
+      "n_solved_capable": 56,
+      "n_capable": 109,
+      "discrimination_capable": 0.48852783484821993,
+      "rate_mini": 0.7878787878787878,
+      "rate_other": 0.39473684210526316,
+      "annotated_difficulty": "15 min - 1 hour",
+      "on_openai_infra_list": true,
+      "reading": "The issue text itself says the test \"is failing quite a few of the CI runs\" and \"I cannot reproduce locally, so I assume there was a numpy change somewhere\". The task is to make an image-comparison test pass whose outcome the reporter already found to depend on the installed numpy. Also on OpenAI's list of 23."
+    },
+    {
+      "task": "psf__requests-2317",
+      "n_solved_all": 100,
+      "n_all": 173,
+      "n_solved_capable": 67,
+      "n_capable": 109,
+      "discrimination_capable": -0.12054030373116346,
+      "rate_mini": 0.45454545454545453,
+      "rate_other": 0.6842105263157895,
+      "annotated_difficulty": "<15 min fix",
+      "on_openai_infra_list": false,
+      "reading": "Seven of the eight FAIL_TO_PASS tests are pre-existing tests such as test_HTTP_302_ALLOW_REDIRECT_GET and test_requests_history_is_saved, not tests of the reported bug. At the task's base commit test_requests.py sets HTTPBIN = os.environ.get('HTTPBIN_URL', 'http://httpbin.org/') and one test requests https://httpbin.org/redirect/5 directly, so these tests make live HTTP requests to a public service. Whether a submission passes then depends partly on network access and on that service at evaluation time."
+    },
+    {
+      "task": "sympy__sympy-18763",
+      "n_solved_all": 56,
+      "n_all": 173,
+      "n_solved_capable": 22,
+      "n_capable": 109,
+      "discrimination_capable": -0.2592184909900472,
+      "rate_mini": 0.030303030303030304,
+      "rate_other": 0.27631578947368424,
+      "annotated_difficulty": "<15 min fix",
+      "on_openai_infra_list": false,
+      "reading": "The issue asks for parentheses around the expression in the LaTeX form of 3*Subs(-x+y, (x,), (1,)). The reference patch adds parentheses unconditionally, and the test patch changes an existing assertion so that Subs(x*y, ...) must now print as \\left(x y\\right). A fix that adds parentheses only where precedence requires them answers the issue and fails that assertion. That would fit the pattern in the data, where the solve rate falls as overall accuracy rises."
+    },
+    {
+      "task": "pytest-dev__pytest-7205",
+      "n_solved_all": 108,
+      "n_all": 173,
+      "n_solved_capable": 69,
+      "n_capable": 109,
+      "discrimination_capable": -0.19254587793013808,
+      "rate_mini": 0.5454545454545454,
+      "rate_other": 0.6710526315789473,
+      "annotated_difficulty": "<15 min fix",
+      "on_openai_infra_list": false,
+      "reading": "The issue is a BytesWarning when a parametrized value is bytes. The reference patch routes every parameter through saferepr, and the test patch rewrites existing expectations so that string parameters must now appear quoted (arg_same?'foo'? instead of arg_same?foo?). The suggestion to use saferepr is in the maintainers' hints, which are not part of the problem statement. Nine of the ten FAIL_TO_PASS tests are these rewritten string expectations and only one covers the bytes case, so a fix that handles only bytes resolves the reported warning and still fails."
+    },
+    {
+      "task": "django__django-10999",
+      "n_solved_all": 0,
+      "n_all": 173,
+      "n_solved_capable": 0,
+      "n_capable": 109,
+      "discrimination_capable": null,
+      "rate_mini": 0.0,
+      "rate_other": 0.0,
+      "annotated_difficulty": "<15 min fix",
+      "on_openai_infra_list": false,
+      "reading": "Labelled \"<15 min fix\" by the human annotators and solved by no submission. The issue proposes a specific one-line change to a lookahead in a regular expression. The reference patch does something else: it introduces a separate sign group, and the test patch changes existing expectations (for example '-15:30' must now mean minus 15 minutes and minus 30 seconds, where the old test expected plus 30 seconds) and requires '-01:-01' to be rejected. I ran the regular expression proposed in the issue: it still reads '-15:30' as minus 15 minutes plus 30 seconds and it accepts '-01:-01'. Following the issue text cannot pass these tests."
+    },
+    {
+      "task": "matplotlib__matplotlib-25479",
+      "n_solved_all": 0,
+      "n_all": 173,
+      "n_solved_capable": 0,
+      "n_capable": 109,
+      "discrimination_capable": null,
+      "rate_mini": 0.0,
+      "rate_other": 0.0,
+      "annotated_difficulty": "<15 min fix",
+      "on_openai_infra_list": true,
+      "reading": "Labelled \"<15 min fix\" and solved by no submission. The issue is about a colormap registered under one name and created under another. One of the two FAIL_TO_PASS tests, test_colormap_equals, has an existing assertion inverted so that two colormaps with different names must now compare equal, a change to Colormap.__eq__ that the issue does not ask for. Also on OpenAI's list of 23."
+    },
+    {
+      "task": "pylint-dev__pylint-4551",
+      "n_solved_all": 0,
+      "n_all": 173,
+      "n_solved_capable": 0,
+      "n_capable": 109,
+      "discrimination_capable": null,
+      "rate_mini": 0.0,
+      "rate_other": 0.0,
+      "annotated_difficulty": "1-4 hours",
+      "on_openai_infra_list": false,
+      "reading": "Solved by no submission. This is the example OpenAI gives of a test that is too narrow: the test module imports a helper named get_annotation that the reference patch introduces and the issue never mentions, so other correct fixes fail at import. I checked the test patch and the import is there. This one is OpenAI's finding, not mine; the data here agree with it."
+    }
+  ]
+}

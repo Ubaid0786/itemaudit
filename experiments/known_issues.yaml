@@ -1,0 +1,105 @@
+# Public lists of SWE-bench Verified tasks that someone else has reported as
+# problematic. Each list was opened and read when this file was written; the
+# audit script intersects them with the tasks itemaudit flags.
+
+openai_infra_23:
+  description: >-
+    Tasks OpenAI omitted from its SWE-bench Verified runs because their
+    solutions "could not run on our infrastructure" (23 of 500).
+  source: >-
+    OpenAI, "Introducing GPT-4.1 in the API" (14 April 2025), footnote 2,
+    https://openai.com/index/gpt-4-1/ read through the Internet Archive
+    snapshot https://web.archive.org/web/20250415150007/https://openai.com/index/gpt-4-1/
+  tasks:
+    - astropy__astropy-7606
+    - astropy__astropy-8707
+    - astropy__astropy-8872
+    - django__django-10097
+    - django__django-7530
+    - matplotlib__matplotlib-20488
+    - matplotlib__matplotlib-20676
+    - matplotlib__matplotlib-20826
+    - matplotlib__matplotlib-23299
+    - matplotlib__matplotlib-24970
+    - matplotlib__matplotlib-25479
+    - matplotlib__matplotlib-26342
+    - psf__requests-6028
+    - pylint-dev__pylint-6528
+    - pylint-dev__pylint-7080
+    - pylint-dev__pylint-7277
+    - pytest-dev__pytest-5262
+    - pytest-dev__pytest-7521
+    - scikit-learn__scikit-learn-12973
+    - sphinx-doc__sphinx-10466
+    - sphinx-doc__sphinx-7462
+    - sphinx-doc__sphinx-8265
+    - sphinx-doc__sphinx-9367
+
+openai_2026_flawed_test_examples:
+  description: >-
+    The three tasks OpenAI names as examples of flawed tests in its 2026
+    audit (tests that import a function name the issue never mentions, tests
+    covering issues the task description leaves out, tests requiring an
+    unspecified parameter). The audit covered 138 tasks and reports material
+    issues in 59.4% of them, but the full list is not published.
+  source: >-
+    OpenAI, "Why SWE-bench Verified no longer measures frontier coding
+    capabilities" (23 February 2026),
+    https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/
+    read through the Internet Archive snapshot
+    https://web.archive.org/web/20260224082405/https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/
+  tasks:
+    - pylint-dev__pylint-4551
+    - sympy__sympy-18199
+    - django__django-14725
+
+utboost_insufficient_tests:
+  description: >-
+    Tasks for which UTBoost confirmed augmented test cases because the
+    original tests let incorrect patches pass (36 ids across SWE-bench Lite
+    and Verified; the script keeps those that are in Verified). These are
+    tasks that are too easy to pass, a different defect from the ones
+    discrimination statistics look for.
+  source: >-
+    Yu, Zhu, He and Kang, "UTBoost: Rigorous Evaluation of Coding Agents on
+    SWE-Bench" (arXiv:2506.09289); list taken from
+    assets/useful_scripts/augTest.json in
+    https://github.com/CUHK-Shenzhen-SE/UTBoost at commit
+    4f32782517f23940d3ede8cd1f250667873cc0c6
+  tasks:
+    - psf__requests-863
+    - sympy__sympy-15678
+    - django__django-11583
+    - sympy__sympy-23117
+    - sympy__sympy-18057
+    - sympy__sympy-18621
+    - django__django-15790
+    - mwaskom__seaborn-3010
+    - django__django-15213
+    - pylint-dev__pylint-5859
+    - django__django-14915
+    - sympy__sympy-20154
+    - django__django-13401
+    - sympy__sympy-17655
+    - django__django-16595
+    - sympy__sympy-21847
+    - matplotlib__matplotlib-23314
+    - django__django-16139
+    - scikit-learn__scikit-learn-14087
+    - scikit-learn__scikit-learn-14894
+    - django__django-11133
+    - sympy__sympy-22714
+    - pylint-dev__pylint-7080
+    - sympy__sympy-16450
+    - django__django-16485
+    - matplotlib__matplotlib-14623
+    - pydata__xarray-3305
+    - django__django-15499
+    - pydata__xarray-7393
+    - pydata__xarray-4687
+    - django__django-13809
+    - django__django-14787
+    - django__django-16116
+    - sympy__sympy-14531
+    - sphinx-doc__sphinx-7440
+    - django__django-12325
